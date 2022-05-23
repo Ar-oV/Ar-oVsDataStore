@@ -3,17 +3,19 @@
   margin: 0;
   border: 0;
 }
+
 *,
 *::before,
 *:after {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 :focus,
 :active {
   outline: none;
 }
+
 a:focus,
 a:active {
   outline: none;
@@ -37,31 +39,39 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 input,
 button,
 textarea {
   font-family: inherit;
 }
+
 input::-ms-clear {
   display: none;
 }
+
 button {
   cursor: pointer;
 }
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
 a,
 a:visited {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 ul il {
   list-style: none;
 }
+
 img {
   vertical-align: top;
 }
@@ -75,6 +85,7 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
+
 h1,
 h2 {
   font-size: 30px;
@@ -83,13 +94,17 @@ h2 {
   text-align: center;
   width: 40%;
   margin: 1% 30%;
-  box-shadow: 0 0 5em color#2557ed;
+  -webkit-box-shadow: 0 0 5em color #2557ed;
+          box-shadow: 0 0 5em color #2557ed;
 }
+
 .image {
   width: 30%;
   margin: 3% 35%;
   text-align: center;
   padding: 0.4%;
   border-radius: 10%;
-  box-shadow: 0 0 5em rgba($color: #2557ed, $alpha: 0.9);
+  -webkit-box-shadow: 0 0 5em rgba(37, 87, 237, 0.9);
+          box-shadow: 0 0 5em rgba(37, 87, 237, 0.9);
 }
+/*# sourceMappingURL=my.css.map */

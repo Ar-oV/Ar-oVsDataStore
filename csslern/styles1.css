@@ -1,19 +1,21 @@
-* {
+sass source/stylesheets/styles1.scss build/stylesheets/styles1.css * {
   padding: 0;
   margin: 0;
   border: 0;
 }
+
 *,
 *::before,
 *:after {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 :focus,
 :active {
   outline: none;
 }
+
 a:focus,
 a:active {
   outline: none;
@@ -37,31 +39,39 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 input,
 button,
 textarea {
   font-family: inherit;
 }
+
 input::-ms-clear {
   display: none;
 }
+
 button {
   cursor: pointer;
 }
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
 a,
 a:visited {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 ul il {
   list-style: none;
 }
+
 img {
   vertical-align: top;
 }
@@ -75,45 +85,60 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
+
 .arial {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
+
 .fontsize30 {
   font-size: 30px;
 }
+
 .italic {
   font-style: italic;
 }
+
 .fontweght700 {
   font-weight: 700;
 }
+
 .colorred {
   color: red;
 }
+
 .textright {
   text-align: center;
 }
+
 .decoration {
   text-decoration: line-through;
 }
+
 .shadow {
   text-shadow: 1px 1px 2px black;
 }
+
 .uppercase {
   text-transform: uppercase;
 }
+
 .ident {
   text-indent: 50px;
 }
+
 .lspace {
   letter-spacing: 10px;
 }
+
 .wspace {
   word-spacing: 7px;
 }
+
 .whitespace {
   white-space: nowrap;
 }
+
 .lineheight {
   line-height: 8px;
 }
+/*# sourceMappingURL=styles1.css.map */

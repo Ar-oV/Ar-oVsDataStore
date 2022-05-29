@@ -62,7 +62,8 @@ a:hover {
   text-decoration: none;
 }
 
-ul il {
+ul,
+il {
   list-style: none;
 }
 
@@ -82,35 +83,39 @@ h6 {
 
 h1,
 h2 {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 30px;
+  font-family: Georgia, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 25px;
   font-weight: 700;
-  padding: 15px;
+  height: 70px;
   text-align: center;
-  width: 40%;
-  margin: 2% 30%;
-  letter-spacing: 10px;
-  background-color: rgba(21, 87, 242, 0.1);
-  border-radius: 50%;
+  width: 500px;
+  margin: 220px auto 15px;
+  padding: 20px;
+  letter-spacing: 6px;
+  background-color: rgba(21, 87, 242, 0.5);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
+          box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
 }
 
 .image {
   width: 30%;
   text-align: center;
   padding: 0.4%;
-  border-radius: 10%;
-  -webkit-box-shadow: 0 0 5em rgba(37, 87, 237, 0.9);
-          box-shadow: 0 0 5em rgba(37, 87, 237, 0.9);
+  border-radius: 5%;
+  -webkit-box-shadow: 0 0 3em rgba(37, 87, 237, 0.9);
+          box-shadow: 0 0 3em rgba(37, 87, 237, 0.9);
 }
 
 .text {
+  margin: 0px auto;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
   border: 10px rgba(37, 87, 237, 0.9);
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  letter-spacing: 7px;
-  text-shadow: 0 0 7px #3333e4;
+  font-family: Georgia, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 4px;
+  text-shadow: 0 0 4px #3333e4;
 }
 
 .text span {
@@ -119,32 +124,57 @@ h2 {
 
 form,
 button {
-  background-color: #09c626;
-  color: #0b35ab;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  padding: 0.4% 7%;
-  letter-spacing: 7px;
+  max-width: 300px;
+  margin: 20px auto;
+  font-size: 15px;
   font-weight: 600;
-  text-shadow: 0 0 7px #3333e4;
+  border: 10px rgba(37, 87, 237, 0.9);
+  font-family: Georgia, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 4px;
+  text-shadow: 0 0 4px #3333e4;
+  text-align: center;
 }
 
-form {
-  margin: 3% 35%;
+form form,
+button form {
+  width: 100%;
+}
+
+form button,
+button button {
+  background-color: rgba(21, 87, 242, 0.5);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
+          box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
+  height: 70px;
+  width: 300px;
+}
+
+form button:hover,
+button button:hover {
+  text-shadow: 0px 0px 5px black;
 }
 
 div.gallery {
-  margin: 3em;
+  margin: 20px auto 30px 20px;
   border: 1px solid #0c11ae;
   float: left;
-  width: 14.6%;
+  width: 20rem;
+  border-radius: 5%;
+  padding: 10px;
+  height: 320px;
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+  border: 1px solid #095914;
+  -webkit-box-shadow: 0 0 15px black;
+          box-shadow: 0 0 15px black;
+}
+
+div.gallery:active {
+  border: 3px solid #077116;
+  -webkit-box-shadow: 0 0 15px red;
+          box-shadow: 0 0 15px red;
 }
 
 div.gallery img {
@@ -155,5 +185,44 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
+}
+
+.block {
+  margin: 60px;
+  height: 300px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 25px #000;
+          box-shadow: 0 0 25px #000;
+  background: url(../rocks.jpg) 50%/cover no-repeat;
+  margin: 0px 0px 100px 0px;
+}
+
+.padding1 {
+  padding: 2%;
+}
+
+.menu {
+  line-height: 70px;
+  border-bottom: solid 3px rgba(0, 64, 255, 0.2);
+  background-color: rgba(0, 8, 255, 0.6);
+  -webkit-box-shadow: 0 0 50px rgba(0, 64, 255, 0.9);
+          box-shadow: 0 0 50px rgba(0, 64, 255, 0.9);
+  font-size: 24px;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.menu .textmenu {
+  padding: 0px 0px 0px 100px;
+  font-family: Georgia, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 4px;
+  text-shadow: 0 0 4px #3333e4;
+}
+
+.menu .textmenu:hover {
+  text-shadow: 0px 0px 5px black;
 }
 /*# sourceMappingURL=my.css.map */

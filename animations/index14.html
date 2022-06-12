@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleble=0"
+    />
+    <link rel="stylesheet" href="/animations/transform.css" />
+    <title>Transform</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <h1>CSS Transform</h1>
+        <div class="content__2D">
+          <section class="content__block">
+            <h2>translate (x, y)</h2>
+            <div class="content__translate">translate</div>
+            <p>
+              <strong>translate</strong> - сдвигает элемент на новое место,
+              перемещая относительно изначального положения объекта вправо и
+              вниз, используя координаты X и Y. Записывается следующим образом
+              (x,y)
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>scale (x, y)</h2>
+            <div class="content__scale">scale</div>
+            <p>
+              <strong>scale</strong> - масштабирует элементы, делая их больше или меньше. По умолчанию значения указаны как еденица (1) - это реальный размер объекта. Первое значение масштабирует элемент по ширине, второе - по высоте. Отрицательные значения отображают элемент зеркально.
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>rotate (угол+deg)</h2>
+            <div class="content__rotate">rotate</div>
+            <p>
+              <strong>rotate</strong> - поворачивает элементы на заданное количество градусов,отрицательные значения поворачивают элемент против часовой стрелки, положительные - по часовой стрелке, записываются значения как градус поворота и deg
+              (x,y)
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>skew (x-угол+deg, y-угол+deg)</h2>
+            <div class="content__skew">skew</div>
+            <p>
+              <strong>skew</strong> - деформирует (искажает) стороны объекта относительно координатных осей. Если указано одно значение, второе будет определено браузером автмоатически. Записываются значения как градуус поворота и Deg
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>matrix (a,c,b,d,x, y)</h2>
+            <div class="content__matrix">matrix</div>
+            <p>
+              <strong>matrix</strong> - позволяет объеденить несколько функций 2D-трансформаций в одной. В качестве трансформации доппустимы поворот, масштабирование, наклон (деформация) и изменение положения. Свойства указываются без едениц измерения.
+              
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>translate (x, y)</h2>
+            <div class="content__multi">translate scale rotate</div>
+            <p>
+              <strong>translate</strong> - Так же, подобного можно добится используя множественные трансформации. А именно записать несколько значений в одно свойство transform.
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>translate (x, y)</h2>
+            <div class="content__transform-origin">transform origin</div>
+            <p>
+              <strong>transform origin</strong> - позволяет сместить центр трансформации, относительно которого происходит изменение опложения/размера/формы элемента
+            </p>
+          </section>
+        </div>
+        <div class="content__3D">
+          <section class="content__block">
+            <h2>perspective, perspective-origin</h2>
+            <div class="content__wrapper3d">
+              <div class="content__perspective">perspective, perspective-origin</div>
+            </div>
+            <p>
+              <strong>perspective, perspective-origin</strong> - установка глубины и смена точки начала координат
+              (x,y)
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>translate3D</h2>
+            <div class="content__wrapper3d">
+              <div class="content__translate3D">translate3D</div>
+            </div>
+            <p>
+              <strong>translate3D</strong> - по аналогии со своим 2D братом это значение задает перемещение элемента, но, в 3D-пространстве. Помимо оси X и Y добавляется ось Z. 
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>scale3D</h2>
+            <div class="content__wrapper3d">
+              <div class="content__scale3D">scale3D</div>
+            </div>
+            <p>
+              <strong>scale3D</strong> - задает трехмерное масштабирование по одной из осей X,Y,Z
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>rotate3D</h2>
+            <div class="content__wrapper3d">
+              <div class="content__rotate3D">rotate3D</div>
+            </div>
+            <p>
+              <strong>rotate3D</strong> - Вращает элемент относительно трех осей. Элемент поворачивается под углом, задаваемым последним параметром относительно вектора направления X,Y,Z
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>matrix3D</h2>
+            <div class="content__wrapper3d">
+              <div class="content__matrix3D">matrix3D</div>
+            </div>
+            <p>
+              <strong>matrix3D</strong> - задает трехмерное преобразование как однородную матрицу размером 4ч4 сс шестнадцатью значениями в столбцах
+              (x,y)
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>Multi3D</h2>
+            <div class="content__wrapper3d">
+              <div class="content__multi3D">translate3d rotate3d</div>
+            </div>
+            <p>
+              <strong>multi3D</strong> - запись нескольких 3D значений в одно свойство transform.
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>transform-style</h2>
+            <div class="content__transform-style-wrapper">
+              <div class="content__transform-style">transform style</div>
+            </div>
+            <p>
+              <strong>multi3D</strong> - задает стиль трансформации
+              (x,y)
+            </p>
+          </section>
+          <section class="content__block">
+            <h2>blacface-visibility</h2>
+            <div class="flip">
+              <div class="flip__body">
+                <div class="flip__front">font</div>
+                <div class="flip__back">body</div>
+              </div>
+            </div>
+            <p>
+              <strong>multi3D</strong> - задает стиль трансформации
+              (x,y)
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

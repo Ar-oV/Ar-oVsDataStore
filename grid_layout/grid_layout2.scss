@@ -1,0 +1,63 @@
+@import url(/scss_lern/nullstyle.css);
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+
+}
+h1{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.wrapper{
+    min-height: 100%;
+    overflow: hidden;
+
+}
+.content{
+    padding: 30px 3%;
+}
+.grid{
+    font-size: 30px;
+    position: relative;
+    margin: 0px 0px 40px 0px;
+}
+.grid__body{
+    display: grid;
+    grid-template-rows: [start] 150px [row2] 150px [row-end];
+    grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+    justify-items: start;
+    align-items: end;
+    gap: 20px;
+    
+}
+.grid__item{
+    
+    text-align: center;
+    border: 2px dashed rgba($color: #ffffff, $alpha: 0.2);
+    padding: 30px;
+}
+.grid__item_1{
+    grid-row:1/1;
+    
+    grid-column:1/1;
+    align-self: stretch;
+    justify-self: stretch;
+   
+    background-color: brown;
+}
+.grid__item_2{
+    align-self: stretch;
+    justify-self: stretch;
+}
+.grid__item_3{
+    }
+.grid__item_4{
+    margin: auto;
+    }
+.grid__item_5{
+    
+}
+.grid__item_6{
+    }

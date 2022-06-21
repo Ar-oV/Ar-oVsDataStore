@@ -1,43 +1,30 @@
-// 1 переменные// 
+// Number
+//const num = 42 // integer
+//const float = 42.42 //float
+//const pow = 10e3 
 
-const firstName = 'Artem'
-const lastName = 'Popov'
-//const age = 26
-const isProgrammer = true 
+/*console.log('MAX_SAFE_INTEGER', Number.MAX_SAFE_INTEGER)
+console.log('Math.pow 53', Math.pow(2,53) - 1)
+console.log('MIN_SAFE_INTEGER', Number.MIN_SAFE_INTEGER)
+console.log('MAX_VALUE', Number.MAX_VALUE)
+console.log('MIN_VALUE', Number.MIN_VALUE)
+console.log('POSITIVE_INFINITY', Number.POSITIVE_INFINITY)
+console.log('NEGATIVE_INFINITY', Number.NEGATIVE_INFINITY)
+console.log('2 / 0', 2 / 0)
+console.log(Number.NaN) // Not A Namber
+console.log(typeof NaN)
+const weird = 2 / undefined
+console.log(Number.isNaN(weird))
+console.log(Number.isNaN(42))
+console.log(Number.isFinite(Infinity))
+console.log(Number.isFinite(42))
 
-const _ = 'private'
-const $ = 'some value'
+const stringInt = '40'
+const stringFloat = '40.42'
+console.log(Number.parseInt(stringInt) + 2)
+console.log(parseInt(stringInt) + 2)
+console.log(Number(stringInt) + 2)
+console.log(+stringInt + 2)
 
-// const if = 'mkef' // err
-const withNum5 = '5'
-// const 5withNum = 5 // err
-
-// 2 мутирование
-// console.log('Имя человека ' + firstName + ', а возраст человека ' + age)
-//alert('Имя человека ' + firstName + ', а возраст человека ' + age)
-
-//const lastName = prompt('Введите фамилию')
-//alert(firstName + ' ' + lastName)
-
-// 3 Операторы
-let currentYear = 2022
-const birthYear = 1995
-
-//const age = currentYear - birthYear
-const a = 10
-const b = 5
-
-let c = 32
-//c = c + a 
-c += a
-c -= a
-c *= a
-c /= a
-
-console.log(a+b)
-console.log(a-b)
-console.log(a*b)
-console.log(a/b)
-console.log(++currentYear)
-console.log(--currentYear)
-console.log(c)
+console.log(parseFloat(stringFloat) + 2)
+console.log(+stringFloat + 2)*/

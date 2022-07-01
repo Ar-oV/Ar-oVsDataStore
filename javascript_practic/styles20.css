@@ -127,6 +127,18 @@ a {
   font-weight: 400;
 }
 
+.button__switch {
+  position: relative;
+  top: -68px;
+  height: 37px;
+  width: 37px;
+  border-radius: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 2px #fff, inset 0 0 20px #4b4a4a;
+          box-shadow: 0 0 2px #fff, inset 0 0 20px #4b4a4a;
+}
+
 .footer__container {
   max-width: 1200px;
   margin: 0 auto;

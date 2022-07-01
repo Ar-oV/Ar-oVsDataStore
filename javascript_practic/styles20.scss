@@ -95,6 +95,17 @@ a {
     font-weight: 400;
     
 }
+.button__switch {
+    position: relative;
+    top: -68px;
+    height: 37px;
+    width: 37px;
+    border-radius: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    box-shadow: 0 0 2px #fff, inset 0 0 20px rgb(75, 74, 74);
+    transition: all 0.6s ease 0s;
+}
 .footer__container {
     max-width: 1200px;
     margin: 0 auto;
@@ -148,7 +159,6 @@ h2 {
     border-radius: 20px;
     :hover {
         transform: scale3d(1.1, 1.1, 1);
-        
     }
     transition: all 0.6s ease 0s;
 }

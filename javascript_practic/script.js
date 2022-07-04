@@ -8,7 +8,8 @@ const border2 = document.querySelector('.link__btn_2')
 const border3 = document.querySelector('.link__btn_3')
 const border4 = document.querySelector('.link__btn_4')
 const btn = document.querySelector('.button__switch')
-const calc = document.querySelector('.calculate__container') 
+const calc = document.querySelector('.calculate__container')
+const ravno = document.querySelector('.item__19')
 
 button.onclick = () => {
     if (button.style.backgroundColor === 'gray') {
@@ -26,6 +27,7 @@ button.onclick = () => {
         btn.style.backgroundColor = '#fff'
         btn.style.top = '-68px'
         calc.style.backgroundColor = '#222'
+        ravno.style.backgroundColor = '#333'
 
     } else {
         button.style.backgroundColor = 'gray'
@@ -42,6 +44,7 @@ button.onclick = () => {
         btn.style.backgroundColor = '#333'
         btn.style.top = '-38px'
         calc.style.backgroundColor = 'gray'
+        ravno.style.backgroundColor = '#555'
     } 
 }
 

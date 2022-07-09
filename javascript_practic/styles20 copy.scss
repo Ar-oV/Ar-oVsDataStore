@@ -292,17 +292,16 @@ h2 {
     top: 120px;
     left: 100px;
     border-radius: 5px;
-    transition: all 0.6s ease 0s;
+    transition: all 0.8s ease 0s;
     opacity: 0;
     visibility: hidden;
-    &.open {
-        opacity: 1;
-        visibility: visible;
-    }
     overflow-y: auto;
     overflow-x: hidden;
+    &.active {
+        opacity: 3;
+        visibility: visible;
+    }
 }
-
 .popup__body {
     min-height: 100%;
     display: flex;
@@ -327,6 +326,7 @@ h2 {
     color: #ad1aad;
     font-weight: 500;
     text-shadow: 1px 0px 5px rgba($color: #ad1aad, $alpha: 0.7);
+    cursor: pointer;
     &:hover {
         font-weight: 700;
         text-shadow: 1px 0px 10px rgba($color: #ad1aad, $alpha: 0.7);

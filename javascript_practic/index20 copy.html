@@ -8,20 +8,11 @@
 </head> 
 <body class="body">
     <div class="wrapper">
-        <header id="header" class="header">
+        <header class="header">
             <div class="header__container">
                 <div class="header__text">
                     <div>
                         <h1>JavaScriptPractic</h1>
-                    </div>
-                </div>
-                <div class="link__row_calc popup__flex">
-                    <div class="link__body_calc"> 
-                        <div class="link__btn_calc link__btn_5">
-                            <a href="#">
-                                <img class="icon icon_1 header__phone open-popup" src="/javascript_practic/img/pngegg (5).png" alt="img">
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -38,37 +29,38 @@
                 </div>
             </div>
             <div class="main__container">
-                <div class="popup popup__bg">
+                <div id="popup" class="popup">
                     <div class="popup__body">
                         <div class="popup__content">
-                            <div class="popup__close close-popup">&times;</div>
+                            <a href="" class="popup__close"></a>
                             <div class="popup__calculate">
-                                <div class="calculate__container">
-                                    <div class="item item__1"><form name="form"><input type="text" name="textview" readonly></form></div>
-                                    <div class="item item__2" onclick="clean()">C</div>
-                                    <div class="item item__3" onclick="back()">&larr;</div>
-                                    <div class="item item__4" onclick="insert('+')">+</div>
-                                    <div class="item item__5" onclick="insert('-')">-</div>
-                                    <div class="item item__6" onclick="insert('*')">&times;</div>
-                                    <div class="item item__7" onclick="insert('/')">&divide;</div>
-                                    <div class="item item__8" onclick="insert('7')">7</div>
-                                    <div class="item item__9" onclick="insert('8')">8</div>
-                                    <div class="item item__10" onclick="insert('9')">9</div>
-                                    <div class="item item__11" onclick="insert('(')">(</div>
-                                    <div class="item item__12" onclick="insert('4')">4</div>
-                                    <div class="item item__13" onclick="insert('5')">5</div>
-                                    <div class="item item__14" onclick="insert('6')">6</div>
-                                    <div class="item item__15" onclick="insert(')')">)</div>
-                                    <div class="item item__16" onclick="insert('1')">1</div>
-                                    <div class="item item__17" onclick="insert('2')">2</div>
-                                    <div class="item item__18" onclick="insert('3')">3</div>
-                                    <div class="item item__19" onclick="equal()">=</div>
-                                    <div class="item item__20" onclick="insert('0')">0</div>
-                                    <div class="item item__21" onclick="insert('.')">.</div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="calculate__container">
+                    <div class="item item__1"><form name="form"><input type="text" name="textview" readonly></form></div>
+                    <div class="item item__2" onclick="clean()">C</div>
+                    <div class="item item__3" onclick="back()">&larr;</div>
+                    <div class="item item__4" onclick="insert('+')">+</div>
+                    <div class="item item__5" onclick="insert('-')">-</div>
+                    <div class="item item__6" onclick="insert('*')">&times;</div>
+                    <div class="item item__7" onclick="insert('/')">&divide;</div>
+                    <div class="item item__8" onclick="insert('7')">7</div>
+                    <div class="item item__9" onclick="insert('8')">8</div>
+                    <div class="item item__10" onclick="insert('9')">9</div>
+                    <div class="item item__11" onclick="insert('(')">(</div>
+                    <div class="item item__12" onclick="insert('4')">4</div>
+                    <div class="item item__13" onclick="insert('5')">5</div>
+                    <div class="item item__14" onclick="insert('6')">6</div>
+                    <div class="item item__15" onclick="insert(')')">)</div>
+                    <div class="item item__16" onclick="insert('1')">1</div>
+                    <div class="item item__17" onclick="insert('2')">2</div>
+                    <div class="item item__18" onclick="insert('3')">3</div>
+                    <div class="item item__19" onclick="equal()">=</div>
+                    <div class="item item__20" onclick="insert('0')">0</div>
+                    <div class="item item__21" onclick="insert('.')">.</div>
                 </div>
             </div>
         </div>
@@ -114,6 +106,6 @@
             </div>
         </footer>
     </div>
-    <script src="script copy.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

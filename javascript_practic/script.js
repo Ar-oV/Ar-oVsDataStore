@@ -7,6 +7,7 @@ const border1 = document.querySelector('.link__btn_1')
 const border2 = document.querySelector('.link__btn_2')
 const border3 = document.querySelector('.link__btn_3')
 const border4 = document.querySelector('.link__btn_4')
+const border5 = document.querySelector('.link__btn_5')
 const btn = document.querySelector('.button__switch')
 const calc = document.querySelector('.calculate__container')
 const ravno = document.querySelector('.item__19')
@@ -24,6 +25,7 @@ button.onclick = () => {
         border2.style.borderColor = 'gray'
         border3.style.borderColor = 'gray'
         border4.style.borderColor = 'gray'
+        border5.style.borderColor = 'gray'
         btn.style.backgroundColor = '#fff'
         btn.style.top = '-68px'
         calc.style.backgroundColor = '#222'
@@ -41,6 +43,7 @@ button.onclick = () => {
         border2.style.borderColor = '#333'
         border3.style.borderColor = '#333'
         border4.style.borderColor = '#333'
+        border5.style.borderColor = '#333'
         btn.style.backgroundColor = '#333'
         btn.style.top = '-38px'
         calc.style.backgroundColor = 'gray'
@@ -106,3 +109,25 @@ function equal() {
         document.form.textview.value = eval(exp);
     }
 }
+
+let popupBg = document.querySelector('.popup__bg');
+let popup = document.querySelector('.popup');
+let openPopup = document.querySelectorAll('.open-popup');
+let closePopupButton = document.querySelector('.close-popup'); // Кнопка для скрытия окна
+openPopup.forEach((button) => { // Перебираем все кнопки
+    button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
+        e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+        popupBg.classList.add('active'); // Добавляем класс 'active' для фона
+        popup.classList.add('active'); // И для самого окна
+    })
+});
+closePopupButton.addEventListener('click',() => { // Вешаем обработчик на крестик
+    popupBg.classList.remove('active'); // Убираем активный класс с фона
+    popup.classList.remove('active'); // И с окна
+});
+document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
+    if(e.target === popupBg) { // Если цель клика - фот, то:
+        popupBg.classList.remove('active'); // Убираем активный класс с фона
+        popup.classList.remove('active'); // И с окна
+    }
+});

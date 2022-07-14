@@ -35,6 +35,7 @@ body {
     max-height: 100px;
 }
 .header__container {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -53,9 +54,9 @@ h1 {
 }
 .button__container {
     max-width: 200px;
-    position: relative;
-    top: -160px;
-    left: -35px;
+    position: absolute;
+    top: 0px;
+    left: 10px;
 }
 .main__container {
     max-width: 1200px;
@@ -302,6 +303,7 @@ h2 {
 .icon {
     box-shadow: 0 0 20px #fff, inset 0 0 30px #fff;
     border-radius: 15px;
+    user-select: none;
 }
 .icon_1:hover {
     box-shadow: 0 0 20px #bf1170, inset 0 0 30px #bf1170;
@@ -372,4 +374,81 @@ h2 {
 .popup-link {
     color: #0195ff;
 }
-.popup__calculate {}
+.todo__container {
+    margin: 100px auto;
+    width: 1200px;
+    height: 810px;
+    background-color: #1f1f1f;
+    box-shadow:  0px 0px 30px rgba($color: #000000, $alpha: 0.6);
+}
+.todo__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+}
+.todo__cell {
+    border: solid 2px rgba($color: #000000, $alpha: 0.5);
+    box-shadow: 0px 0px 7px rgba($color: #000000, $alpha: 0.9);
+    text-align: center;
+    min-height: 250px;
+    padding: 50px;
+    margin: 0px 10px 10px 10px;
+}
+.todo__cell_1 {
+    grid-column: 1/-1;
+    margin-top: 10px;
+}
+.todo__cell_2 {
+
+}
+.todo__cell_3 {}
+.todo__cell_4 {}
+.todo__cell_5 {
+    grid-column: 1/-1;
+}
+.todo__body {}
+.todo__list {}
+input.message {
+    width: 100%;
+    border: none;
+    min-height: 50px;
+    outline: none;
+    text-align: right;
+    color: #222;
+    font-size: 30px;
+}
+.todo__box {
+    text-align: center;
+}
+.todo {
+    display: flex;
+    justify-content: left;
+}
+ul.todo {
+    overflow: hidden;
+}
+li
+.todo__item {
+    flex: 1 1 auto;
+    height: 120px;
+    width: 120px;
+    background-color:#575757;
+    box-shadow: inset 0px 0px 25px rgba($color: #2c2c2c, $alpha: 1.0);
+    border: solid 3px #2c2c2c;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0px 0px 5px rgba($color: #ad1aad, $alpha: 0.7);
+        transform: translate(0px,-100px) scale(2.7, 2.7); 
+        transition: all 0.4s ease 0s;
+        z-index: 100;
+    }
+}
+label {
+    margin: 100 auto;
+    font-size: 15px;
+    text-transform: uppercase;
+
+}

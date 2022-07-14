@@ -51,46 +51,6 @@ button.onclick = () => {
     } 
 }
 
-/*function plus() {
-    let num1, num2, result;
-
-    num1 = document.getElementById('n1').value;
-    num1 = parseInt(num1);
-    num2 = document.getElementById('n2').value;
-    num2 = parseInt(num2);
-    result = num1 + num2;
-    document.getElementById('out').innerHTML = result;
-}
-function minus() {
-    let num1, num2, result;
-
-    num1 = document.getElementById('n1').value;
-    num1 = parseInt(num1);
-    num2 = document.getElementById('n2').value;
-    num2 = parseInt(num2);
-    result = num1 - num2;
-    document.getElementById('out').innerHTML = result;
-}
-function multiply() {
-    let num1, num2, result;
-
-    num1 = document.getElementById('n1').value;
-    num1 = parseInt(num1);
-    num2 = document.getElementById('n2').value;
-    num2 = parseInt(num2);
-    result = num1 * num2;
-    document.getElementById('out').innerHTML = result;
-}
-function multiplyx() {
-    let num1, num2, result;
-
-    num1 = document.getElementById('n1').value;
-    num1 = parseInt(num1);
-    num2 = document.getElementById('n2').value;
-    num2 = parseInt(num2);
-    result = num1 / num2;
-    document.getElementById('out').innerHTML = result;
-}*/
 
 function insert(num) {
     document.form.textview.value =
@@ -131,3 +91,33 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
         popup.classList.remove('active'); // И с окна
     }
 });
+let addMessage = document.querySelector('.message'),
+    addButton = document.querySelector('.add'),
+    todo = document.querySelector('.todo');
+
+let todoList = [];
+
+addButton.addEventListener('click', function(){
+
+    let newTodo = {
+        todo: addMessage.value,
+        checked: false,
+        important: false
+    };
+    todoList.push (newTodo);
+    displayMessage();
+});
+
+function displayMessage(){
+    let displayMessage = '';
+    todoList.forEach(function(item, i){
+        displayMessage += `
+        <li>
+            <div type='' class='todo__item' id='item_${i}'>
+                <label for='item_${i}'>${item.todo}</label>
+            </div>
+        </li>
+        `;
+        todo.innerHTML = displayMessage
+    })
+}

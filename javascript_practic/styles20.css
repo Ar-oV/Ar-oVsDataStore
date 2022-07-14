@@ -55,6 +55,7 @@ body {
 }
 
 .header__container {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   display: -webkit-box;
@@ -80,9 +81,9 @@ h1 {
 
 .button__container {
   max-width: 200px;
-  position: relative;
-  top: -160px;
-  left: -35px;
+  position: absolute;
+  top: 0px;
+  left: 10px;
 }
 
 .main__container {
@@ -453,6 +454,10 @@ h2 {
   -webkit-box-shadow: 0 0 20px #fff, inset 0 0 30px #fff;
           box-shadow: 0 0 20px #fff, inset 0 0 30px #fff;
   border-radius: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .icon_1:hover {
@@ -551,5 +556,102 @@ h2 {
 
 .popup-link {
   color: #0195ff;
+}
+
+.todo__container {
+  margin: 100px auto;
+  width: 1200px;
+  height: 810px;
+  background-color: #1f1f1f;
+  -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+}
+
+.todo__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+}
+
+.todo__cell {
+  border: solid 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.9);
+          box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  min-height: 250px;
+  padding: 50px;
+  margin: 0px 10px 10px 10px;
+}
+
+.todo__cell_1 {
+  grid-column: 1/-1;
+  margin-top: 10px;
+}
+
+.todo__cell_5 {
+  grid-column: 1/-1;
+}
+
+input.message {
+  width: 100%;
+  border: none;
+  min-height: 50px;
+  outline: none;
+  text-align: right;
+  color: #222;
+  font-size: 30px;
+}
+
+.todo__box {
+  text-align: center;
+}
+
+.todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+ul.todo {
+  overflow: hidden;
+}
+
+li
+.todo__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  height: 120px;
+  width: 120px;
+  background-color: #575757;
+  -webkit-box-shadow: inset 0px 0px 25px #2c2c2c;
+          box-shadow: inset 0px 0px 25px #2c2c2c;
+  border: solid 3px #2c2c2c;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+li
+.todo__item:hover {
+  -webkit-box-shadow: 0px 0px 5px rgba(173, 26, 173, 0.7);
+          box-shadow: 0px 0px 5px rgba(173, 26, 173, 0.7);
+  -webkit-transform: translate(0px, -100px) scale(2.7, 2.7);
+          transform: translate(0px, -100px) scale(2.7, 2.7);
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  z-index: 100;
+}
+
+label {
+  margin: 100 auto;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=styles20.css.map */

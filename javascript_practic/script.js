@@ -97,6 +97,11 @@ let addMessage = document.querySelector('.message'),
 
 let todoList = [];
 
+if(localStorage.getItem('todo')){
+    todoList = JSON.parse(localStorage.getItem('todo'));
+    displayMessage();
+}
+
 addButton.addEventListener('click', function(){
 
     let newTodo = {
@@ -106,6 +111,7 @@ addButton.addEventListener('click', function(){
     };
     todoList.push (newTodo);
     displayMessage();
+    localStorage.setItem('todo', JSON.stringify(todoList));
 });
 
 function displayMessage(){

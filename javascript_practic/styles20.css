@@ -561,7 +561,6 @@ h2 {
 .todo__container {
   margin: 100px auto;
   width: 1200px;
-  height: 810px;
   background-color: #1f1f1f;
   -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
           box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
@@ -616,10 +615,8 @@ input.message {
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
-}
-
-ul.todo {
-  overflow: hidden;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 li

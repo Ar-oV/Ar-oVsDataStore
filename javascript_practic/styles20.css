@@ -595,13 +595,14 @@ h2 {
 }
 
 input.message {
-  width: 100%;
+  width: 75%;
   border: none;
-  min-height: 50px;
+  min-height: 60px;
   outline: none;
-  text-align: right;
+  text-align: left;
   color: #222;
-  font-size: 30px;
+  font-size: 25px;
+  border-radius: 10px;
 }
 
 .todo__box {
@@ -633,6 +634,8 @@ li
   border-radius: 10px;
   margin: 10px;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 
 li
@@ -646,9 +649,66 @@ li
   z-index: 100;
 }
 
+li
+.todo__item input {
+  position: absolute;
+  left: 5px;
+  bottom: -37px;
+  width: 15px;
+  height: 15px;
+}
+
+.important {
+  color: #ad1aad;
+}
+
+.delete__todo {
+  position: absolute;
+  right: 5px;
+  bottom: 3px;
+  font-size: 16px;
+  color: #ad1aad;
+  font-weight: 500;
+  text-shadow: 1px 0px 5px rgba(173, 26, 173, 0.7);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.delete__todo:hover {
+  font-weight: 700;
+  text-shadow: 1px 0px 10px rgba(173, 26, 173, 0.7);
+}
+
 label {
   margin: 100 auto;
   font-size: 15px;
   text-transform: uppercase;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.add {
+  width: 160px;
+  height: 40px;
+  margin: 0px 0px 10px 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.add:hover {
+  -webkit-box-shadow: 0px 0px 10px #ff02ff;
+          box-shadow: 0px 0px 10px #ff02ff;
+}
+
+p {
+  line-height: 40px;
+  margin-bottom: 10px;
+  letter-spacing: 10px;
 }
 /*# sourceMappingURL=styles20.css.map */

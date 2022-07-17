@@ -89,7 +89,7 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
     if(e.target === popupBg) { // Если цель клика - фот, то:
         popupBg.classList.remove('active'); // Убираем активный класс с фона
         popup.classList.remove('active'); // И с окна
-    }
+    };
 });
 let addMessage = document.querySelector('.message'),
     addButton = document.querySelector('.add'),
@@ -99,31 +99,71 @@ let todoList = [];
 
 if(localStorage.getItem('todo')){
     todoList = JSON.parse(localStorage.getItem('todo'));
-    displayMessage();
-}
+    displayMessages();
+};
 
 addButton.addEventListener('click', function(){
-
+    if(!addMessage.value)return;
     let newTodo = {
         todo: addMessage.value,
         checked: false,
-        important: false
+        important: false,
+        done: false,
+        id: `${Math.random()}`
     };
     todoList.push (newTodo);
-    displayMessage();
+    displayMessages();
     localStorage.setItem('todo', JSON.stringify(todoList));
+    addMessage.value = '';
 });
 
-function displayMessage(){
-    let displayMessage = '';
+function displayMessages(){
+    let displayMessages = '';
+    if(todoList.length === 0) todo.innerHTML = '';
     todoList.forEach(function(item, i){
-        displayMessage += `
+        displayMessages += `
         <li>
-            <div type='' class='todo__item' id='item_${i}'>
+            <div  class='todo__item "${item.important ? 'important' : ''}"' id='item_${i}'>
+                <input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
+                <div class='delete__todo "${item.important ? 'important' : ''}"'>&times;</div>
                 <label for='item_${i}'>${item.todo}</label>
             </div>
         </li>
         `;
-        todo.innerHTML = displayMessage
+        todo.innerHTML = displayMessages;
+    });
+};
+todo.addEventListener('change', function(event){
+    let idInput = event.target.getAttribute('id');
+    let forLabel = todo.querySelector('[for=' + idInput + ']');
+    let valueLabel = forLabel.innerHTML;
+    todoList.forEach(function(item){
+        if(item.todo === valueLabel){
+            item.checked = !item.checked;
+            localStorage.setItem('todo',JSON.stringify(todoList));
+        };
+    });
+});
+todo.addEventListener('contextmenu',function(event){
+    event.preventDefault();
+    todoList.forEach(function(item, i){
+        if(item.todo === event.target.innerHTML){
+            if(event.ctrlKey){
+                todoList.splice(i, 1);
+            }
+            else {
+                item.important = !item.important;
+            }
+            displayMessages();
+            localStorage.setItem('todo',JSON.stringify(todoList));
+        };
+    });
+});
+/*let deleteTodo = document.querySelector('.delete__todo')
+todo.addEventListener('click',(event) => {
+    todoList.forEach(function(item, i){
+        if(event.target === deleteTodo){
+            todoList.splice(i, 1);
+        }
     })
-}
+})*/

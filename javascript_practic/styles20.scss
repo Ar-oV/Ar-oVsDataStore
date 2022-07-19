@@ -78,6 +78,7 @@ h1 {
     border-radius: 35px;
     box-shadow: 0 0 10px rgb(173, 26, 173);
     transition: all 2s ease 0s;
+    cursor: pointer;
 }
 .button__btn:hover {
     transition: all 0.3s ease 0s;
@@ -112,6 +113,8 @@ a {
     margin: 0 auto;
     box-shadow: 0 0 2px #fff, inset 0 0 20px rgb(75, 74, 74);
     transition: all 0.6s ease 0s;
+    user-select: none;
+    cursor: pointer;
 }
 .calculate__container {
     display: grid;
@@ -422,6 +425,24 @@ input.message {
 .todo__box {
     text-align: center;
 }
+.empty__list {
+    margin: 10px auto;
+    height: 120px;
+    width: 100%;
+    p {
+        font-size: 40px;
+        line-height: 50px;
+        letter-spacing: 50px;
+        text-transform: uppercase;
+        margin: 40px 0px 0px 25px;
+        text-shadow:0px 0px 10px #ad1aad;
+    }
+
+}
+.none {
+    display: none;
+    
+}
 .todo {
     display: flex;
     justify-content: left;
@@ -429,7 +450,10 @@ input.message {
     margin: 0 auto;
 }
 ul.todo {
-    
+    display: flex;
+    justify-content: left;
+    width: 1000px;
+    margin: 0 auto;
 }
 li
 .todo__item {
@@ -472,6 +496,7 @@ li
     cursor: pointer;
     user-select: none;
     &:hover {
+        
         font-weight: 700;
         text-shadow: 1px 0px 10px rgba($color: #ad1aad, $alpha: 0.7);
     }
@@ -482,6 +507,10 @@ label {
     text-transform: uppercase;
     line-height: 30px;
     cursor: pointer;
+    &.done {
+        font-weight: 700;
+        cursor: pointer;
+    }
 }
 .add {
     width: 160px;

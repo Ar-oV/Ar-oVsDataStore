@@ -91,13 +91,54 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
         popup.classList.remove('active'); // И с окна
     };
 });
-let addMessage = document.querySelector('.message'),
-    addButton = document.querySelector('.add'),
-    todo = document.querySelector('.todo');
+const addMessage = document.querySelector('.message');
+const addButton = document.querySelector('.add');
+const todo = document.querySelector('.todo');
+const emptyList = document.querySelector('.empty__list')
 
-let todoList = [];
+let tasks = [];
 
-if(localStorage.getItem('todo')){
+addButton.addEventListener('click', addTask);
+todo.addEventListener('click', deleteTodo);
+todo.addEventListener('click', doneTodo);
+
+function addTask (event){
+    event.preventDefault();
+    const addText = addMessage.value;
+    const taskHTML = `
+    <li>
+        <div class='todo__item'>
+            <div class='delete__todo' data-action='delete'>&times;</div>
+            <label data-action='done'>${addText}</label>
+        </div>
+    </li>
+    `;
+    todo.insertAdjacentHTML('beforeend',taskHTML);
+    addMessage.value = ""
+    addMessage.focus ()
+    if(todo.children.length > 1) {
+        emptyList.classList.add('none');
+    }
+}
+
+function deleteTodo(event) {
+    if(event.target.dataset.action !== 'delete') return;
+    
+    const parenNode = event.target.closest('li');
+    parenNode.remove();
+
+    if(todo.children.length === 1) {
+        emptyList.classList.remove('none');
+    }
+
+}
+function doneTodo(event){
+    if(event.target.dataset.action !== 'done') return;
+    const parentNode = event.target.closest('.todo__item');
+    const taskTitle= parentNode.querySelector('label');
+    taskTitle.classList.toggle('done');
+}
+/*if(localStorage.getItem('todo')){
     todoList = JSON.parse(localStorage.getItem('todo'));
     displayMessages();
 };
@@ -108,8 +149,9 @@ addButton.addEventListener('click', function(){
         todo: addMessage.value,
         checked: false,
         important: false,
-        done: false,
-        id: `${Math.random()}`
+        id: Date.now(),
+        text: taskText,
+        done: false
     };
     todoList.push (newTodo);
     displayMessages();
@@ -123,9 +165,9 @@ function displayMessages(){
     todoList.forEach(function(item, i){
         displayMessages += `
         <li>
-            <div  class='todo__item "${item.important ? 'important' : ''}"' id='item_${i}'>
+            <div id='${newTodo.id}' class='todo__item "${item.important ? 'important' : ''}"' id='item_${i}'>
                 <input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
-                <div class='delete__todo "${item.important ? 'important' : ''}"'>&times;</div>
+                <div data-action='delete' class='delete__todo "${item.important ? 'important' : ''}"'>&times;</div>
                 <label for='item_${i}'>${item.todo}</label>
             </div>
         </li>
@@ -159,11 +201,4 @@ todo.addEventListener('contextmenu',function(event){
         };
     });
 });
-/*let deleteTodo = document.querySelector('.delete__todo')
-todo.addEventListener('click',(event) => {
-    todoList.forEach(function(item, i){
-        if(event.target === deleteTodo){
-            todoList.splice(i, 1);
-        }
-    })
-})*/
+*/

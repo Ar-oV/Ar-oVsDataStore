@@ -110,6 +110,7 @@ h1 {
           box-shadow: 0 0 10px #ad1aad;
   -webkit-transition: all 2s ease 0s;
   transition: all 2s ease 0s;
+  cursor: pointer;
 }
 
 .button__btn:hover {
@@ -155,6 +156,11 @@ a {
           box-shadow: 0 0 2px #fff, inset 0 0 20px #4b4a4a;
   -webkit-transition: all 0.6s ease 0s;
   transition: all 0.6s ease 0s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }
 
 .calculate__container {
@@ -609,7 +615,37 @@ input.message {
   text-align: center;
 }
 
+.empty__list {
+  margin: 10px auto;
+  height: 120px;
+  width: 100%;
+}
+
+.empty__list p {
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 50px;
+  text-transform: uppercase;
+  margin: 40px 0px 0px 25px;
+  text-shadow: 0px 0px 10px #ad1aad;
+}
+
+.none {
+  display: none;
+}
+
 .todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+ul.todo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -687,6 +723,11 @@ label {
   font-size: 15px;
   text-transform: uppercase;
   line-height: 30px;
+  cursor: pointer;
+}
+
+label.done {
+  font-weight: 700;
   cursor: pointer;
 }
 

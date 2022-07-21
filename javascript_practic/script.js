@@ -105,11 +105,19 @@ todo.addEventListener('click', doneTodo);
 function addTask (event){
     event.preventDefault();
     const addText = addMessage.value;
+    const newTask = {
+        id: Date.now(),
+        text: addText,
+        done: false
+    };
+    tasks.push(newTask);
+    console.log(tasks);
+    const cssClass = newTask.done ? 'label__text label__text_done' : 'label__text';
     const taskHTML = `
-    <li>
+    <li id='${newTask.id}'>
         <div class='todo__item'>
             <div class='delete__todo' data-action='delete'>&times;</div>
-            <label data-action='done'>${addText}</label>
+            <label class='${cssClass}' data-action='done'>${addText}</label>
         </div>
     </li>
     `;
@@ -125,6 +133,9 @@ function deleteTodo(event) {
     if(event.target.dataset.action !== 'delete') return;
     
     const parenNode = event.target.closest('li');
+    const id = Number(parenNode.id);
+    const index = tasks.findIndex( (task) => task.id === id);
+    tasks.splice(index, 1)
     parenNode.remove();
 
     if(todo.children.length === 1) {
@@ -136,7 +147,7 @@ function doneTodo(event){
     if(event.target.dataset.action !== 'done') return;
     const parentNode = event.target.closest('.todo__item');
     const taskTitle= parentNode.querySelector('label');
-    taskTitle.classList.toggle('done');
+    taskTitle.classList.toggle('label__text_done');
 }
 /*if(localStorage.getItem('todo')){
     todoList = JSON.parse(localStorage.getItem('todo'));

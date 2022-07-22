@@ -111,10 +111,10 @@ function addTask (event){
         done: false
     };
     tasks.push(newTask);
-    console.log(tasks);
+    
     const cssClass = newTask.done ? 'label__text label__text_done' : 'label__text';
     const taskHTML = `
-    <li id='${newTask.id}'>
+    <li id='${newTask.id}' class='list-group-item'>
         <div class='todo__item'>
             <div class='delete__todo' data-action='delete'>&times;</div>
             <label class='${cssClass}' data-action='done'>${addText}</label>
@@ -134,8 +134,12 @@ function deleteTodo(event) {
     
     const parenNode = event.target.closest('li');
     const id = Number(parenNode.id);
-    const index = tasks.findIndex( (task) => task.id === id);
+    //нахождение индекса задачи в массиве
+    const index = tasks.findIndex((task) => task.id === id);
+    //удаление задачи из масива с задачами
     tasks.splice(index, 1)
+    //удаление через фильтрацию
+    //tasks = tasks.filter((task) => task.id !== id);
     parenNode.remove();
 
     if(todo.children.length === 1) {
@@ -145,7 +149,18 @@ function deleteTodo(event) {
 }
 function doneTodo(event){
     if(event.target.dataset.action !== 'done') return;
-    const parentNode = event.target.closest('.todo__item');
+    const parentNode = event.target.closest('.list-group-item');
+    const id = Number(parentNode.id);
+    const task = tasks.find(function(task){
+        if (task.id === id) {
+            return true
+        }
+    });
+    
+    
+    task.done = !task.done
+    console.log(tasks);
+
     const taskTitle= parentNode.querySelector('label');
     taskTitle.classList.toggle('label__text_done');
 }

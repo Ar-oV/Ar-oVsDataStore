@@ -11,6 +11,7 @@ const border5 = document.querySelector('.link__btn_5')
 const btn = document.querySelector('.button__switch')
 const calc = document.querySelector('.calculate__container')
 const ravno = document.querySelector('.item__19')
+const cellColor = document.querySelector('.todo__container')
 
 button.onclick = () => {
     if (button.style.backgroundColor === 'gray') {
@@ -30,6 +31,7 @@ button.onclick = () => {
         btn.style.top = '-68px'
         calc.style.backgroundColor = '#222'
         ravno.style.backgroundColor = '#333'
+        cellColor.style.backgroundColor = '#1f1f1f'
 
     } else {
         button.style.backgroundColor = 'gray'
@@ -48,6 +50,7 @@ button.onclick = () => {
         btn.style.top = '-38px'
         calc.style.backgroundColor = 'gray'
         ravno.style.backgroundColor = '#555'
+        cellColor.style.backgroundColor = 'gray'
     } 
 }
 
@@ -97,6 +100,12 @@ const todo = document.querySelector('.todo');
 const emptyList = document.querySelector('.empty__list')
 
 let tasks = [];
+if(localStorage.getItem('tasks')){
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+    tasks.forEach((task) => renderTask(task));
+}
+
+checkEmptyList();
 
 addButton.addEventListener('click', addTask);
 todo.addEventListener('click', deleteTodo);
@@ -110,23 +119,19 @@ function addTask (event){
         text: addText,
         done: false
     };
-    tasks.push(newTask);
-    
-    const cssClass = newTask.done ? 'label__text label__text_done' : 'label__text';
-    const taskHTML = `
-    <li id='${newTask.id}' class='list-group-item'>
-        <div class='todo__item'>
-            <div class='delete__todo' data-action='delete'>&times;</div>
-            <label class='${cssClass}' data-action='done'>${addText}</label>
-        </div>
-    </li>
-    `;
-    todo.insertAdjacentHTML('beforeend',taskHTML);
+    if(tasks.length < 7){
+        tasks.push(newTask);
+        saveToLocalStorage();
+        renderTask(newTask);
+    };
+
+
     addMessage.value = ""
     addMessage.focus ()
-    if(todo.children.length > 1) {
-        emptyList.classList.add('none');
-    }
+    //if(todo.children.length > 1) {
+    //    emptyList.classList.add('none');
+    //}
+    checkEmptyList();
 }
 
 function deleteTodo(event) {
@@ -135,96 +140,58 @@ function deleteTodo(event) {
     const parenNode = event.target.closest('li');
     const id = Number(parenNode.id);
     //нахождение индекса задачи в массиве
-    const index = tasks.findIndex((task) => task.id === id);
+    //const index = tasks.findIndex((task) => task.id === id);
     //удаление задачи из масива с задачами
-    tasks.splice(index, 1)
+    //tasks.splice(index, 1)
     //удаление через фильтрацию
-    //tasks = tasks.filter((task) => task.id !== id);
+    tasks = tasks.filter((task) => task.id !== id);
+    saveToLocalStorage();
     parenNode.remove();
 
-    if(todo.children.length === 1) {
-        emptyList.classList.remove('none');
-    }
-
+    //if(todo.children.length === 1) {
+    //    emptyList.classList.remove('none');
+    //}
+    checkEmptyList();
 }
 function doneTodo(event){
     if(event.target.dataset.action !== 'done') return;
     const parentNode = event.target.closest('.list-group-item');
     const id = Number(parentNode.id);
-    const task = tasks.find(function(task){
-        if (task.id === id) {
-            return true
-        }
-    });
+    const task = tasks.find( (task) => task.id === id);
     
     
-    task.done = !task.done
-    console.log(tasks);
+    task.done = !task.done;
+    saveToLocalStorage();
 
     const taskTitle= parentNode.querySelector('label');
     taskTitle.classList.toggle('label__text_done');
 }
-/*if(localStorage.getItem('todo')){
-    todoList = JSON.parse(localStorage.getItem('todo'));
-    displayMessages();
-};
+function checkEmptyList(){
+    if(tasks.length === 0){
+        const emptyListHTML = `
+        <div class="empty__list">
+            <p>empty</p>
+        </div>`
+        todo.insertAdjacentHTML('afterbegin', emptyListHTML);
+    }
 
-addButton.addEventListener('click', function(){
-    if(!addMessage.value)return;
-    let newTodo = {
-        todo: addMessage.value,
-        checked: false,
-        important: false,
-        id: Date.now(),
-        text: taskText,
-        done: false
-    };
-    todoList.push (newTodo);
-    displayMessages();
-    localStorage.setItem('todo', JSON.stringify(todoList));
-    addMessage.value = '';
-});
-
-function displayMessages(){
-    let displayMessages = '';
-    if(todoList.length === 0) todo.innerHTML = '';
-    todoList.forEach(function(item, i){
-        displayMessages += `
-        <li>
-            <div id='${newTodo.id}' class='todo__item "${item.important ? 'important' : ''}"' id='item_${i}'>
-                <input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
-                <div data-action='delete' class='delete__todo "${item.important ? 'important' : ''}"'>&times;</div>
-                <label for='item_${i}'>${item.todo}</label>
-            </div>
-        </li>
-        `;
-        todo.innerHTML = displayMessages;
-    });
-};
-todo.addEventListener('change', function(event){
-    let idInput = event.target.getAttribute('id');
-    let forLabel = todo.querySelector('[for=' + idInput + ']');
-    let valueLabel = forLabel.innerHTML;
-    todoList.forEach(function(item){
-        if(item.todo === valueLabel){
-            item.checked = !item.checked;
-            localStorage.setItem('todo',JSON.stringify(todoList));
-        };
-    });
-});
-todo.addEventListener('contextmenu',function(event){
-    event.preventDefault();
-    todoList.forEach(function(item, i){
-        if(item.todo === event.target.innerHTML){
-            if(event.ctrlKey){
-                todoList.splice(i, 1);
-            }
-            else {
-                item.important = !item.important;
-            }
-            displayMessages();
-            localStorage.setItem('todo',JSON.stringify(todoList));
-        };
-    });
-});
-*/
+    if(tasks.length > 0) {
+        const emptyListEl = document.querySelector('.empty__list');
+        emptyListEl ? emptyListEl.remove() : null;
+    }
+}
+function saveToLocalStorage(){
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+function renderTask(task) {
+    const cssClass = task.done ? 'label__text label__text_done' : 'label__text';
+    const taskHTML = `
+    <li id='${task.id}' class='list-group-item'>
+        <div class='todo__item'>
+            <label class='${cssClass}' data-action='done'>${task.text}</label>
+            <div class='delete__todo' data-action='delete'>&times;</div>
+        </div>
+    </li>
+    `;
+    todo.insertAdjacentHTML('beforeend',taskHTML);
+}

@@ -577,8 +577,8 @@ h2 {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+  -ms-grid-rows: 330px 500px 1fr;
+      grid-template-rows: 330px 500px 1fr;
 }
 
 .todo__cell {
@@ -656,7 +656,10 @@ ul.todo {
   margin: 0 auto;
 }
 
-li
+li {
+  display: inline-block;
+}
+
 .delete__todo {
   display: none;
 }

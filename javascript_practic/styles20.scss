@@ -387,7 +387,7 @@ h2 {
 .todo__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 330px 500px 1fr;
     
 }
 .todo__cell {
@@ -455,7 +455,9 @@ ul.todo {
     width: 1000px;
     margin: 0 auto;
 }
-li
+li {
+    display:inline-block;
+}
 .delete__todo {
     display: none;
 }

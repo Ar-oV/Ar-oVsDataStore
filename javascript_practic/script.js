@@ -169,7 +169,7 @@ function doneTodo(event){
 function checkEmptyList(){
     if(tasks.length === 0){
         const emptyListHTML = `
-        <div class="empty__list">
+        <div class="empty__list none">
             <p>empty</p>
         </div>`
         todo.insertAdjacentHTML('afterbegin', emptyListHTML);
@@ -186,7 +186,7 @@ function saveToLocalStorage(){
 function renderTask(task) {
     const cssClass = task.done ? 'label__text label__text_done' : 'label__text';
     const taskHTML = `
-    <li id='${task.id}' class='list-group-item'>
+    <li id='${task.id}' class='list-group-item' draggable='true'>
         <div class='todo__item'>
             <label class='${cssClass}' data-action='done'>${task.text}</label>
             <div class='delete__todo' data-action='delete'>&times;</div>
@@ -195,3 +195,46 @@ function renderTask(task) {
     `;
     todo.insertAdjacentHTML('beforeend',taskHTML);
 }
+
+
+const dragCard = document.querySelectorAll('.list-group-item');
+const allCells = document.querySelectorAll('.todo__cell');
+let draggableTodo = null;
+
+dragCard.forEach((dragTodo) => {
+    dragTodo.addEventListener('dragstart', dragStart);
+    dragTodo.addEventListener('dragend', dragEnd);
+
+});
+function dragStart(){
+    draggableTodo = this;
+    console.log('dragstart');
+};
+function dragEnd(){
+    draggableTodo = null;
+    console.log('dragend');
+};
+allCells.forEach((cell) => {
+    cell.addEventListener('dragover', dragOver);
+    cell.addEventListener('dragenter', dragEnter);
+    cell.addEventListener('dragleave', dragLeave);
+    cell.addEventListener('drop', dragDrop);
+    
+});
+function dragOver(e){
+    e.preventDefault();
+    //console.log('dragover');
+};
+function dragEnter(){
+    this.style.border = '1 px dashed #ccc';
+    console.log('dragenter');
+};
+function dragLeave(){
+    this.style.border = 'none'
+    console.log('dragleave');
+};
+function dragDrop(){
+    this.style.border = 'none'
+    this.appendChild(draggableTodo);
+    console.log('dragdrop');
+};

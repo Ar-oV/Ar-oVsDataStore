@@ -125,7 +125,6 @@ function addTask (event){
         renderTask(newTask);
     };
 
-
     addMessage.value = ""
     addMessage.focus ()
     //if(todo.children.length > 1) {
@@ -148,9 +147,9 @@ function deleteTodo(event) {
     saveToLocalStorage();
     parenNode.remove();
 
-    //if(todo.children.length === 1) {
-    //    emptyList.classList.remove('none');
-    //}
+    if(todo.children.length === 1) {
+        emptyList.classList.remove('none');
+    }
     checkEmptyList();
 }
 function doneTodo(event){
@@ -169,7 +168,7 @@ function doneTodo(event){
 function checkEmptyList(){
     if(tasks.length === 0){
         const emptyListHTML = `
-        <div class="empty__list none">
+        <div class="empty__list">
             <p>empty</p>
         </div>`
         todo.insertAdjacentHTML('afterbegin', emptyListHTML);

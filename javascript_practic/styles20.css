@@ -75,7 +75,7 @@ h1 {
   font-size: 34px;
   text-transform: uppercase;
   letter-spacing: 10px;
-  margin: 0px 0px 0px 10px;
+  margin: 0px 0px 0px 200px;
   font-weight: 400;
 }
 
@@ -423,6 +423,7 @@ h2 {
 }
 
 .link__btn_calc {
+  margin: 0 20px;
   background-color: rgba(224, 224, 224, 0.1);
   border: 1px solid gray;
   border-radius: 20px;
@@ -516,6 +517,26 @@ h2 {
   visibility: visible;
 }
 
+.popup-2 {
+  position: fixed;
+  width: 1200px;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 120px;
+  margin: 0 auto;
+  border-radius: 5px;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.popup-2.active {
+  opacity: 3;
+  visibility: visible;
+}
+
 .popup__body {
   min-height: 100%;
   display: -webkit-box;
@@ -594,6 +615,7 @@ h2 {
 .todo__cell_1 {
   grid-column: 1/-1;
   margin-top: 10px;
+  position: relative;
 }
 
 .todo__cell_5 {

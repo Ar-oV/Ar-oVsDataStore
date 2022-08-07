@@ -8,6 +8,7 @@ const border2 = document.querySelector('.link__btn_2')
 const border3 = document.querySelector('.link__btn_3')
 const border4 = document.querySelector('.link__btn_4')
 const border5 = document.querySelector('.link__btn_5')
+const border6 = document.querySelector('.link__btn_6')
 const btn = document.querySelector('.button__switch')
 const calc = document.querySelector('.calculate__container')
 const ravno = document.querySelector('.item__19')
@@ -27,6 +28,7 @@ button.onclick = () => {
         border3.style.borderColor = 'gray'
         border4.style.borderColor = 'gray'
         border5.style.borderColor = 'gray'
+        border6.style.borderColor = 'gray'
         btn.style.backgroundColor = '#fff'
         btn.style.top = '-68px'
         calc.style.backgroundColor = '#222'
@@ -46,6 +48,7 @@ button.onclick = () => {
         border3.style.borderColor = '#333'
         border4.style.borderColor = '#333'
         border5.style.borderColor = '#333'
+        border6.style.borderColor = '#333'
         btn.style.backgroundColor = '#333'
         btn.style.top = '-38px'
         calc.style.backgroundColor = 'gray'
@@ -92,6 +95,27 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
     if(e.target === popupBg) { // Если цель клика - фот, то:
         popupBg.classList.remove('active'); // Убираем активный класс с фона
         popup.classList.remove('active'); // И с окна
+    };
+});
+let popupBg2 = document.querySelector('.popup__bg-2');
+let popup2 = document.querySelector('.popup-2');
+let openPopup2 = document.querySelectorAll('.open-popup-2');
+let closePopupButton2 = document.querySelector('.close-popup-2'); // Кнопка для скрытия окна
+openPopup2.forEach((button) => { // Перебираем все кнопки
+    button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
+        e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+        popupBg2.classList.add('active'); // Добавляем класс 'active' для фона
+        popup2.classList.add('active'); // И для самого окна
+    })
+});
+closePopupButton2.addEventListener('click',() => { // Вешаем обработчик на крестик
+    popupBg2.classList.remove('active'); // Убираем активный класс с фона
+    popup2.classList.remove('active'); // И с окна
+});
+document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
+    if(e.target === popupBg2) { // Если цель клика - фот, то:
+        popupBg2.classList.remove('active'); // Убираем активный класс с фона
+        popup2.classList.remove('active'); // И с окна
     };
 });
 const addMessage = document.querySelector('.message');
@@ -196,7 +220,7 @@ function renderTask(task) {
 }
 
 
-const dragCard = document.querySelectorAll('.list-group-item');
+const dragCard = document.querySelectorAll('.#${task.id}');
 const allCells = document.querySelectorAll('.todo__cell');
 let draggableTodo = null;
 
@@ -225,15 +249,12 @@ function dragOver(e){
     //console.log('dragover');
 };
 function dragEnter(){
-    this.style.border = '1 px dashed #ccc';
     console.log('dragenter');
 };
 function dragLeave(){
-    this.style.border = 'none'
     console.log('dragleave');
 };
 function dragDrop(){
-    this.style.border = 'none'
     this.appendChild(draggableTodo);
     console.log('dragdrop');
 };

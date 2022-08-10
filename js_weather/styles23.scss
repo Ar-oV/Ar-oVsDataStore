@@ -1,0 +1,102 @@
+@import url(/scss_lern/nullstyle.css);
+html,
+body {
+    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+    background:url(/js_weather/img/skyBox.jpg) center;
+    font-size: 24px;
+    color: antiquewhite;
+}
+.wrapper {
+    margin: 0 auto;
+}
+.content {
+    width: 1200px;
+    margin: 0 auto;
+}
+.location {
+    line-height: 60px;
+    text-align: center;
+}
+.grid__header {
+    z-index: 1;
+    margin-top: 100px;
+    display: grid;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 20px rgba($color: #000000, $alpha: 0.8);
+    grid-template-columns:[start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr[row-end];
+    grid-template-rows: [start] 150px [col2] 1fr [col3] 200px [col-end];
+}
+.temperature{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    border-bottom: solid 2px rgba($color: #ffffff, $alpha: 0.1);
+    p {
+        text-align: center;
+        font-size: 95px;
+        padding: 0px 5px;
+        font-weight: 500;
+        line-height: 150px;
+    }
+}
+.temperature__icon{
+    position: relative;
+    grid-row: 1/2;
+    grid-column: 2/5;
+    border-bottom: solid 2px rgba($color: #ffffff, $alpha: 0.1);
+    img{
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+.weather__conditions {
+    border-bottom: solid 2px rgba($color: #ffffff, $alpha: 0.1);
+    grid-row: 1/2;
+    grid-column: 5/6;
+    text-align: center;
+    line-height: 150px;
+    font-size: 30px;
+}
+p {}
+.main {
+    grid-row: 2/3;
+    grid-column: 1/6;
+    position: relative;
+    .feels__like {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .time{
+        text-align: center;
+        font-size: 180px;
+        margin-top: 80px;
+    }
+    .date{
+        text-align: center;
+        padding-bottom: 50px;
+        border-bottom: solid 2px rgba($color: #ffffff, $alpha: 0.1);
+    }
+    .min_max{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+.himidity {}
+.precipitation {}
+.direction__wind {
+    .circle{
+        box-shadow: inset 0px 0px 20px rgba($color: #000000, $alpha: 0.8);
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        border-radius: 50%;
+        height: 240px;
+        width: 240px;
+        text-align: center;
+    }
+}
+.pressure {}
+.visibility {}

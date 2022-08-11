@@ -86,8 +86,36 @@ p {}
         right: 10px;
     }
 }
-.himidity {}
-.precipitation {}
+.himidity {
+    position: relative;
+    margin-top: 100px;
+    img{
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    p{
+        
+        text-align: center;
+        
+    }
+}
+.precipitation {
+    position: relative;
+    margin-top: 100px;
+    img{
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    p{
+        
+        text-align: center;
+        
+    }
+}
 .direction__wind {
     .circle{
         box-shadow: inset 0px 0px 20px rgba($color: #000000, $alpha: 0.8);
@@ -98,5 +126,33 @@ p {}
         text-align: center;
     }
 }
-.pressure {}
-.visibility {}
+.pressure {
+    position: relative;
+    margin-top: 100px;
+    img{
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    p{
+        
+        text-align: center;
+        
+    }
+}
+.visibility {
+    position: relative;
+    margin-top: 100px;
+    img{
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    p{
+        
+        text-align: center;
+        
+    }
+}

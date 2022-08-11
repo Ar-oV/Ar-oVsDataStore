@@ -121,6 +121,40 @@ body {
   right: 10px;
 }
 
+.himidity {
+  position: relative;
+  margin-top: 100px;
+}
+
+.himidity img {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.himidity p {
+  text-align: center;
+}
+
+.precipitation {
+  position: relative;
+  margin-top: 100px;
+}
+
+.precipitation img {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.precipitation p {
+  text-align: center;
+}
+
 .direction__wind .circle {
   -webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
           box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
@@ -128,6 +162,40 @@ body {
   border-radius: 50%;
   height: 240px;
   width: 240px;
+  text-align: center;
+}
+
+.pressure {
+  position: relative;
+  margin-top: 100px;
+}
+
+.pressure img {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.pressure p {
+  text-align: center;
+}
+
+.visibility {
+  position: relative;
+  margin-top: 100px;
+}
+
+.visibility img {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.visibility p {
   text-align: center;
 }
 /*# sourceMappingURL=styles23.css.map */

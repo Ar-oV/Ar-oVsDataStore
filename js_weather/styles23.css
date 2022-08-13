@@ -27,10 +27,7 @@ body {
   margin-top: 100px;
   display: -ms-grid;
   display: grid;
-  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  -webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
-          box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
   -ms-grid-columns: [start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr [row-end];
       grid-template-columns: [start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr [row-end];
   -ms-grid-rows: [start] 150px [col2] 1fr [col3] 200px [col-end];
@@ -45,6 +42,8 @@ body {
   -ms-grid-column-span: 1;
   grid-column: 1/2;
   border-bottom: solid 2px rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 20px;
 }
 
 .temperature p {
@@ -64,9 +63,11 @@ body {
   -ms-grid-column-span: 3;
   grid-column: 2/5;
   border-bottom: solid 2px rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .temperature__icon img {
+  z-index: 100;
   position: absolute;
   top: -50px;
   left: 50%;
@@ -85,6 +86,8 @@ body {
   text-align: center;
   line-height: 150px;
   font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 20px;
 }
 
 .main {
@@ -95,6 +98,7 @@ body {
   -ms-grid-column-span: 5;
   grid-column: 1/6;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .main .feels__like {
@@ -123,10 +127,12 @@ body {
 
 .himidity {
   position: relative;
-  margin-top: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 20px;
 }
 
 .himidity img {
+  margin-top: 100px;
   position: absolute;
   top: -60px;
   left: 50%;
@@ -135,15 +141,22 @@ body {
 }
 
 .himidity p {
+  margin-top: 150px;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   text-align: center;
 }
 
 .precipitation {
   position: relative;
-  margin-top: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .precipitation img {
+  margin-top: 100px;
   position: absolute;
   top: -60px;
   left: 50%;
@@ -152,25 +165,32 @@ body {
 }
 
 .precipitation p {
+  margin-top: 150px;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   text-align: center;
 }
 
-.direction__wind .circle {
-  -webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
-          box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+.direction__wind {
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  height: 240px;
+  height: 200px;
   width: 240px;
+}
+
+.direction__wind .circle {
   text-align: center;
 }
 
 .pressure {
   position: relative;
-  margin-top: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .pressure img {
+  margin-top: 100px;
   position: absolute;
   top: -60px;
   left: 50%;
@@ -179,15 +199,23 @@ body {
 }
 
 .pressure p {
+  margin-top: 150px;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   text-align: center;
 }
 
 .visibility {
   position: relative;
-  margin-top: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom-right-radius: 20px;
 }
 
 .visibility img {
+  margin-top: 100px;
   position: absolute;
   top: -60px;
   left: 50%;
@@ -196,6 +224,21 @@ body {
 }
 
 .visibility p {
+  margin-top: 150px;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   text-align: center;
+}
+
+.convex {
+  width: 240px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  border-bottom-right-radius: 110px 40px;
+  border-bottom-left-radius: 115px 40px;
 }
 /*# sourceMappingURL=styles23.css.map */

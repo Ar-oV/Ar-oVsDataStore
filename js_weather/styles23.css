@@ -234,11 +234,24 @@ body {
 }
 
 .convex {
-  width: 240px;
-  height: 50px;
+  position: relative;
+  width: 380px;
+  height: 40px;
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0 auto;
-  border-bottom-right-radius: 110px 40px;
-  border-bottom-left-radius: 115px 40px;
+  border-bottom-right-radius: 150px 40px;
+  border-bottom-left-radius: 150px 40px;
+}
+
+.convex::before {
+  position: absolute;
+  top: 0px;
+  left: -30px;
+  content: '';
+  width: 100px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  border-top-right-radius: 80%;
 }
 /*# sourceMappingURL=styles23.css.map */

@@ -25,6 +25,7 @@ body {
 
     border-radius: 20px;
     
+    
     grid-template-columns:[start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr[row-end];
     grid-template-rows: [start] 150px [col2] 1fr [col3] 200px [col-end];
 }
@@ -140,8 +141,78 @@ p {}
     height: 200px;
     width: 240px;
     .circle{
+        position: relative;
+        display: block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: thick double  antiquewhite;
+        margin: 45px auto;
+        .direction {
+            width: 20px;
+            height: 20px;
+            background-color: rgba($color: #000000, $alpha: 0.9);
+            text-align: center;
+            border-radius: 50%;
+            padding-top: 1px;
+            font-size: 18px;
+        }
+        .direction_1 {
+            position: absolute;
+            top: -13px;
+            left: 60px;
+            
+        }
+        .direction_2 {
+            position: absolute;
+            top: 60px;
+            right: -12px;
 
-        text-align: center;
+        }
+        .direction_3 {
+            position: absolute;
+            bottom: -13px;
+            left: 60px;
+
+        }
+        .direction_4 {
+            position: absolute;
+            top: 60px;
+            left: -12px;
+
+        }
+    }
+    .circle__little {
+        position: relative;
+        display: flex;
+        margin: 20px auto;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: solid 2px antiquewhite;
+        .wind__speed{
+            margin: 23px auto;
+            text-align: center;
+            width: 60px;
+        }
+        .direction__wind_icon{
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            width: 95px;
+            height: 20px;
+            transform: rotate(180deg);
+            &:before{
+                content: '<';
+                top:0px;
+                left: 0px;
+                
+                border-radius: 50%;
+            }
+            
+        }
     }
 }
 .pressure {
@@ -192,15 +263,49 @@ p {}
     margin: 0 auto;
     border-bottom-right-radius: 150px 40px;
     border-bottom-left-radius: 150px 40px;
-    &::before {
-        position: absolute;
-        top: 0px;
-        left: -30px;
-        content: '';
-        width: 100px;
-        height: 50px;
-        background-color: rgba($color: #000000, $alpha: 0.5);
-        display: inline-block;
-        border-top-right-radius: 80%;
+}
+.grid__footer{
+    margin: 50px 0px;
+    text-align: center;
+    
+    display: grid;
+    grid-template-columns:[start] 1fr [row-end];
+    grid-template-rows: [start] 150px [col2] 200px [col-end];
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    border-radius: 20px;
+    .weather__ahead_1{
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        display: grid;
+        grid-template-columns:[start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr [row6] 1fr [row7] 1fr [row8] 1fr[row-end];
+        grid-template-rows: [start] 150px [col2] 200px [col-end];
+        border-bottom: solid 2px rgba($color: #ffffff, $alpha: 0.1);
+        .weather__ahead_hour{
+            padding: 20px 0px;
+        }
+        .weather__ahead_hour_1{
+            
+        }
+        .weather__ahead_hour_2{}
+        .weather__ahead_hour_3{}
+        .weather__ahead_hour_4{}
+        .weather__ahead_hour_5{}
+        .weather__ahead_hour_6{}
+        .weather__ahead_hour_7{}
+        .weather__ahead_hour_8{}
+    }
+    .weather__ahead_2{
+        grid-column: 1/-1;
+        grid-row: 2/-1;
+        display: grid;
+        grid-template-columns:[start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row-end];
+        grid-template-rows: [start] 150px [col2] 200px [col-end];
+        .weather__ahead_day{
+            padding: 20px 0px;
+        }
+        .weather__ahead_day_1{}
+        .weather__ahead_day_2{}
+        .weather__ahead_day_3{}
+        .weather__ahead_day_4{}
     }
 }

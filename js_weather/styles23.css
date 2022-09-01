@@ -355,6 +355,28 @@ body {
   padding: 20px 0px;
 }
 
+.grid__footer .weather__ahead_1 .weather__ahead_hour_icon {
+  margin: 3px auto;
+}
+
+.grid__footer .weather__ahead_1 .weather__ahead_hour_temperature {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.grid__footer .weather__ahead_1 .weather__ahead_hour_1 .weather__ahead_hour_time_now {
+  font-size: 24px;
+  display: inline;
+  padding: 2px;
+  border: solid 1px white;
+  border-radius: 10%;
+}
+
+.grid__footer .weather__ahead_1 .weather__ahead_hour_time {
+  font-size: 22px;
+  padding: 2px;
+}
+
 .grid__footer .weather__ahead_2 {
   grid-column: 1/-1;
   grid-row: 2/-1;
@@ -368,5 +390,9 @@ body {
 
 .grid__footer .weather__ahead_2 .weather__ahead_day {
   padding: 20px 0px;
+}
+
+.emptiness {
+  height: 200px;
 }
 /*# sourceMappingURL=styles23.css.map */

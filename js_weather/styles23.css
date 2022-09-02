@@ -18,8 +18,47 @@ body {
 }
 
 .location {
+  position: relative;
   line-height: 60px;
   text-align: center;
+}
+
+.location .placeholder {
+  position: absolute;
+  left: 36.5%;
+  top: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.location input:focus + .placeholder, .location input:not(:placeholder-shown) + .placeholder {
+  top: 30px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-size: 17px;
+}
+
+.location input {
+  font-weight: 500;
+  letter-spacing: 6px;
+  color: antiquewhite;
+  font-size: 28px;
+  border: none;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+  -webkit-transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0s;
+}
+
+.location input:focus {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.4);
 }
 
 .grid__header {

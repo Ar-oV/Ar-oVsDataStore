@@ -15,8 +15,38 @@ body {
     margin: 0 auto;
 }
 .location {
+    position: relative;
     line-height: 60px;
     text-align: center;
+    
+    .placeholder{
+        position: absolute;
+        left: 36.5%;
+        top: 0;
+        user-select: none;
+        pointer-events: none;
+        transition: all 0.3s ease 0s;
+    }
+    input:focus + .placeholder, input:not(:placeholder-shown) + .placeholder{
+        top: 30px;
+        transition: all 0.3s ease 0s;
+        font-size: 17px;
+    }
+    input {
+        font-weight: 500;
+        letter-spacing: 6px;
+        color: antiquewhite;
+        font-size: 28px;
+        border: none;
+        border-bottom: solid 2px rgba($color: #ffffff, $alpha: 0.1);
+        background-color: transparent;
+        transition: all 0.1s ease 0s;
+        &:focus {
+            transition: all 0.3s ease 0s;
+            border-bottom: solid 2px rgba($color: #ffffff, $alpha: 0.4);
+        }
+        
+    }
 }
 .grid__header {
     z-index: 1;

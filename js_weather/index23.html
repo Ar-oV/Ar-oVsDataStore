@@ -9,28 +9,31 @@
     <div class="wrapper">
         <div class="content">
             <div class="location">
-                <input type="text" name="" required="" placeholder="  ">
+                <input class="input" type="text" name="" placeholder="  ">
                 <label for="Location" class="placeholder" >Location</label>
             </div>
             <div class="grid__header">
                 <div class="temperature">
-                    <p>11C&#176;</p>
+                    <p id="temperature"></p>
                 </div>
                 <div class="temperature__icon">
                     <img src="/js_weather/img/sun_cloud.png" alt="icon">
                 </div>
                 <div class="weather__conditions">
-                    <p>Cloudy</p>
+                    <p id="weather__conditions"></p>
                 </div>
                 <div class="main">
                     <div class="feels__like">Feels like 55&#176;</div>
                     <div class="time">09:18</div>
                     <div class="date">Tuesday, April 28, 2015</div>
-                    <div class="min_max">Min 50&#176; | Max 70&#176;</div>
+                    <div class="min_max">
+                        <p id="min" class="min"></p>
+                        <p id="max" class="max"></p>
+                    </div>
                 </div>
-                <div class="himidity">
+                <div class="humidity">
                     <img src="/js_weather/img/humidity.png" alt="img">
-                    <p>Himidity 59%</p>
+                    <p id="humidity">Himidity 59%</p>
                 </div>
                 <div class="precipitation">
                     <img src="/js_weather/img/umbrella.png" alt="img">
@@ -43,20 +46,18 @@
                         <div class="direction direction_3">S</div>        
                         <div class="direction direction_4">W</div>        
                         <div class="circle__little">
-                            <p class="wind__speed">
-                                7 km/h
-                            </p>
+                            <p class="wind__speed"></p>
                             <div class="direction__wind_icon"></div>
                         </div>
                     </div>
                 </div>
                 <div class="pressure">
                     <img src="/js_weather/img/barometer.png" alt="img">
-                    <p>Pressure 101kPa</p>
+                    <p id="pressure">Pressure 101kPa</p>
                 </div>
                 <div class="visibility">
                     <img src="/js_weather/img/visibility.png" alt="img">
-                    <p>Visibility 8 km</p>
+                    <p id="visibility">Visibility 8 km</p>
                 </div>
             </div>
             <div class="convex"></div>

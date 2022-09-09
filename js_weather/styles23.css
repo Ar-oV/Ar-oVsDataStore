@@ -158,19 +158,25 @@ body {
   border-bottom: solid 2px rgba(255, 255, 255, 0.1);
 }
 
-.main .min_max {
+.main .min_max .min {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 160px;
 }
 
-.himidity {
+.main .min_max .max {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.humidity {
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom-left-radius: 20px;
 }
 
-.himidity img {
+.humidity img {
   margin-top: 100px;
   position: absolute;
   top: -60px;
@@ -179,7 +185,7 @@ body {
           transform: translate(-50%);
 }
 
-.himidity p {
+.humidity p {
   margin-top: 150px;
   position: absolute;
   top: -60px;

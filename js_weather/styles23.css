@@ -115,6 +115,12 @@ body {
 }
 
 .weather__conditions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-bottom: solid 2px rgba(255, 255, 255, 0.1);
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -122,11 +128,15 @@ body {
   -ms-grid-column: 5;
   -ms-grid-column-span: 1;
   grid-column: 5/6;
-  text-align: center;
-  line-height: 150px;
   font-size: 30px;
   background-color: rgba(0, 0, 0, 0.5);
   border-top-right-radius: 20px;
+}
+
+.weather__conditions p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .main {

@@ -81,8 +81,9 @@ const markup = () => {
     return `
         <div class="content">
             <div class="location">
-                <input class="input" id="text-input" type="text" name="" placeholder="  " >
-                <label for="Location" class="placeholder" >${city}</label>
+                <input class="input" id="text-input" type="text" name="${city}" placeholder="  " >
+                <label for="Location" class="placeholder" >Location</label>
+                <button class="button_ready">OK</button>
             </div>
             <div class="grid__header">
                 <div class="temperature">
@@ -285,6 +286,9 @@ const renderComponent = () => {
 };
 textInput.addEventListener("input", handleInput);*/
 fetchData();
+const button = document.querySelector('.button_ready')
+
+
     /*.then(function (resp) { return resp.json() })
     .then(function (data) {
         console.log(data);

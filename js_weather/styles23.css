@@ -61,6 +61,24 @@ body {
   border-bottom: solid 2px rgba(255, 255, 255, 0.4);
 }
 
+.location .button_ready {
+  position: absolute;
+  top: 50px;
+  left: 45%;
+  background-color: transparent;
+  display: inline-block;
+  color: antiquewhite;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.location .button_ready:active {
+  -webkit-transition: all 0.04s ease 0s;
+  transition: all 0.04s ease 0s;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+}
+
 .grid__header {
   z-index: 1;
   margin-top: 100px;

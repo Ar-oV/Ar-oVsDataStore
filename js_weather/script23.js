@@ -1,8 +1,9 @@
 const link = 'http://api.weatherstack.com/current?access_key=4b0b7d5c7a2e1d756b53f36069f81ac2'
+const button = document.querySelector('.button_ready')
+const textInput = document.querySelector('#text-input')
 
-const textInput = document.getElementById('text-input')
 let store = {
-    city: 'berlin',
+    city: 'Berlin',
     feelslike: 0,
     cloudcover: 0,
     temperature: 0,
@@ -70,7 +71,7 @@ const getImage = (weatherDescriptions) => {
             return 'weather_storms.png';
         case 'heavy rain':
             return 'showers_rain.png';
-        case 'light rain':
+        case 'light rain shower':
             return 'rain.png';
         default:
             return 'sun.png';
@@ -79,12 +80,6 @@ const getImage = (weatherDescriptions) => {
 const markup = () => {
     const { city, temperature, feelslike, weatherDescriptions, observationTime, localtime, cloudcover, humidity, pressure, visibility, precip, windSpeed} = store;
     return `
-        <div class="content">
-            <div class="location">
-                <input class="input" id="text-input" type="text" name="${city}" placeholder="  " >
-                <label for="Location" class="placeholder" >Location</label>
-                <button class="button_ready">OK</button>
-            </div>
             <div class="grid__header">
                 <div class="temperature">
                     <p id="temperature">${temperature}&#176;</p>
@@ -134,159 +129,30 @@ const markup = () => {
                 </div>
             </div>
             <div class="convex"></div>
-            <div class="grid__footer">
-                <ul class="weather__ahead_1">
-                    <li class="weather__ahead_hour weather__ahead_hour_1">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/minicloud.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time_now">
-                            NOW
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            11&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_hour weather__ahead_hour_2">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/miniheavyrain.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            9AM
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            16&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_hour weather__ahead_hour_3">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/miniligthrain.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            12PM
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            19&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_hour weather__ahead_hour_4">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/minisun.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            3PM
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            21&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_hour weather__ahead_hour_5">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/minisuncloud.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            6PM
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            23&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_hour weather__ahead_hour_6">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/minisnow.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            9PM
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            20&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_hour weather__ahead_hour_7">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/minicloud.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            12AM
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            16&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_hour weather__ahead_hour_8">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/minimoon.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            3AM
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            11&#176;
-                        </p>
-                    </li>
-                </ul>
-                <ul class="weather__ahead_2">
-                    <li class="weather__ahead_day weather__ahead_day_1">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/middlecloud.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time_now">
-                            TODAY
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            19&#176; | 10&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_day weather__ahead_day_2">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/middleheavyrain.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            WED
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            17&#176; | 9&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_day weather__ahead_day_3">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/middlesun.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            THU
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            23&#176; | 14&#176;
-                        </p>
-                    </li>
-                    <li class="weather__ahead_day weather__ahead_day_4">
-                        <p class="weather__ahead_hour_icon">
-                            <img src="/js_weather/img/middlesuncloud.png" alt="icon">
-                        </p>
-                        <p class="weather__ahead_hour_time">
-                            FRI
-                        </p>
-                        <p class="weather__ahead_hour_temperature">
-                            21&#176; | 12&#176;
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="emptiness"></div>
-        </div>`
+            <div class="emptiness"></div>`
 }
 const renderComponent = () => {
     root.innerHTML = markup();
 }
-/*const handleInput = (e) => {
+button.addEventListener('click', myClick);
+function myClick(){
+    let a = document.querySelector('.input').value;
+}
+
+const handleInput = (a) => {
     store = {
         ...store,
-        city: e.target.value,
+        city: a.target.value,
     };
 };
-textInput.addEventListener("input", handleInput);*/
+const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(store.city)
+}
+button.addEventListener('submit',handleSubmit)
+textInput.addEventListener("input", handleInput);
 fetchData();
-const button = document.querySelector('.button_ready')
+
 
 
     /*.then(function (resp) { return resp.json() })

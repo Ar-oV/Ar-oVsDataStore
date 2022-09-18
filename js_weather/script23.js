@@ -1,9 +1,8 @@
-const link = 'http://api.weatherstack.com/current?access_key=4b0b7d5c7a2e1d756b53f36069f81ac2'
+const link = 'http://api.weatherstack.com/current?access_key=da8fdd54aa06796a4e8718dcfcd36397'
 const button = document.querySelector('.button_ready')
-const textInput = document.querySelector('#text-input')
 
 let store = {
-    city: 'Berlin',
+    city: 'Moscow',
     feelslike: 0,
     cloudcover: 0,
     temperature: 0,
@@ -16,6 +15,7 @@ let store = {
     observationTime: 0,
     weatherDescriptions: 0,
     localtime: 0,
+    windDegree: 0,
 };
 const fetchData = async () => {
     const result = await fetch(`${link}&query=${store.city}`);
@@ -34,6 +34,7 @@ const fetchData = async () => {
             wind_speed:windSpeed, 
             is_day:isDay, 
             weather_descriptions: weatherDescriptions,
+            wind_degree: windDegree,
         },
         location: {
             localtime,
@@ -53,6 +54,7 @@ const fetchData = async () => {
         observationTime,
         weatherDescriptions: weatherDescriptions[0],
         localtime,
+        windDegree,
     }
     renderComponent();
 }
@@ -77,6 +79,13 @@ const getImage = (weatherDescriptions) => {
             return 'sun.png';
     }
 }
+const directionWindIcon = document.querySelector('.direction__wind_icon');
+windDirection = () => {
+    let deg = store.windDegree;
+    directionWindIcon.style.transform = 'rotate(' + deg + 'deg)';
+    fetchData();
+}
+
 const markup = () => {
     const { city, temperature, feelslike, weatherDescriptions, observationTime, localtime, cloudcover, humidity, pressure, visibility, precip, windSpeed} = store;
     return `
@@ -137,20 +146,11 @@ const renderComponent = () => {
 button.addEventListener('click', myClick);
 function myClick(){
     let a = document.querySelector('.input').value;
+    store.city = a;
+    fetchData();
 }
 
-const handleInput = (a) => {
-    store = {
-        ...store,
-        city: a.target.value,
-    };
-};
-const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(store.city)
-}
-button.addEventListener('submit',handleSubmit)
-textInput.addEventListener("input", handleInput);
+
 fetchData();
 
 

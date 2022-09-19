@@ -79,12 +79,6 @@ const getImage = (weatherDescriptions) => {
             return 'sun.png';
     }
 }
-const directionWindIcon = document.querySelector('.direction__wind_icon');
-windDirection = () => {
-    let deg = store.windDegree;
-    directionWindIcon.style.transform = 'rotate(' + deg + 'deg)';
-    fetchData();
-}
 
 const markup = () => {
     const { city, temperature, feelslike, weatherDescriptions, observationTime, localtime, cloudcover, humidity, pressure, visibility, precip, windSpeed} = store;
@@ -138,17 +132,26 @@ const markup = () => {
                 </div>
             </div>
             <div class="convex"></div>
-            <div class="emptiness"></div>`
-}
+            <div class="emptiness"></div>`;
+};
 const renderComponent = () => {
     root.innerHTML = markup();
-}
+};
 button.addEventListener('click', myClick);
 function myClick(){
     let a = document.querySelector('.input').value;
     store.city = a;
     fetchData();
-}
+};
+
+// const directionWindIcon = document.querySelector('.direction__wind_icon');
+// function windDirection(){
+//     let deg = store.windDegree;
+//     fetchData();
+//     directionWindIcon.style.transform = 'rotate(' + deg +'deg)';
+//     console.log(deg);
+// };
+// windDirection();
 
 
 fetchData();

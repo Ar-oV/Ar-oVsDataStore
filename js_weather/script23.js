@@ -144,14 +144,14 @@ function myClick(){
     fetchData();
 };
 
-// const directionWindIcon = document.querySelector('.direction__wind_icon');
-// function windDirection(){
-//     let deg = store.windDegree;
-//     fetchData();
-//     directionWindIcon.style.transform = 'rotate(' + deg +'deg)';
-//     console.log(deg);
-// };
-// windDirection();
+const directionWindIcon = document.querySelector('.direction__wind_icon');
+function windDirection(){
+    let deg = store.windDegree;
+    fetchData();
+    directionWindIcon.style={transform: `rotate(${store.windDegree.parameters.wd.values}deg) scale(-1, -1)`};
+    console.log(deg);
+};
+windDirection();
 
 
 fetchData();

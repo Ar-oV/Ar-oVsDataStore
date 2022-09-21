@@ -17,10 +17,12 @@ let store = {
     localtime: 0,
     windDegree: 0,
 };
+
 const fetchData = async () => {
     const result = await fetch(`${link}&query=${store.city}`);
     const data = await result.json();
     console.log(data);
+    
     const {
         current: { 
             feelslike, 
@@ -57,7 +59,7 @@ const fetchData = async () => {
         windDegree,
     }
     renderComponent();
-}
+};
 const getImage = (weatherDescriptions) => {
     const value = weatherDescriptions.toLowerCase();
     switch(value) {
@@ -79,8 +81,8 @@ const getImage = (weatherDescriptions) => {
             return 'sun.png';
     }
 }
-
 const markup = () => {
+    
     const { city, temperature, feelslike, weatherDescriptions, observationTime, localtime, cloudcover, humidity, pressure, visibility, precip, windSpeed} = store;
     return `
             <div class="grid__header">
@@ -134,24 +136,35 @@ const markup = () => {
             <div class="convex"></div>
             <div class="emptiness"></div>`;
 };
+
 const renderComponent = () => {
     root.innerHTML = markup();
 };
 button.addEventListener('click', myClick);
 function myClick(){
+    console.log(store.windDegree);
     let a = document.querySelector('.input').value;
     store.city = a;
+    let deg = store.windDegree;
+    const directionWindIcon = document.querySelector('.direction__wind_icon');{
+        if(directionWindIcon.style.transform.rotate === 'rotate(180deg)'){
+            directionWindIcon.style.transform.rotate = '('+ deg +'deg)';
+        };
+    };
+    console.log(directionWindIcon);
+    console.log(deg);
+    console.log('('+ deg +'deg)');
     fetchData();
 };
 
-const directionWindIcon = document.querySelector('.direction__wind_icon');
-function windDirection(){
-    let deg = store.windDegree;
-    fetchData();
-    directionWindIcon.style={transform: `rotate(${store.windDegree.parameters.wd.values}deg) scale(-1, -1)`};
-    console.log(deg);
-};
-windDirection();
+// const directionWindIcon = document.querySelector('.direction__wind_icon');
+// function windDirection(){
+//     //fetchData();
+//     //let deg = store.windDegree;
+//     //directionWindIcon.style={transform: `rotate(${store.windDegree.parameters.wd.values}deg) scale(-1, -1)`};
+//     //console.log(deg);
+// };
+// windDirection();
 
 
 fetchData();

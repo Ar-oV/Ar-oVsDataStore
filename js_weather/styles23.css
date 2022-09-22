@@ -316,6 +316,7 @@ body {
 }
 
 .direction__wind .circle__little .direction__wind_icon {
+  display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

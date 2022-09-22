@@ -146,15 +146,13 @@ function myClick(){
     let a = document.querySelector('.input').value;
     store.city = a;
     let deg = store.windDegree;
-    const directionWindIcon = document.querySelector('.direction__wind_icon');{
-        if(directionWindIcon.style.transform.rotate === 'rotate(180deg)'){
-            directionWindIcon.style.transform.rotate = '('+ deg +'deg)';
-        };
-    };
+    const directionWindIcon = document.querySelector('.direction__wind_icon')
+    directionWindIcon.style.transform = 'rotate('+ deg +'deg)';
     console.log(directionWindIcon);
     console.log(deg);
-    console.log('('+ deg +'deg)');
-    fetchData();
+    console.log('rotate('+ deg +'deg)');
+    console.log(directionWindIcon.style.transform);
+    //fetchData();
 };
 
 // const directionWindIcon = document.querySelector('.direction__wind_icon');

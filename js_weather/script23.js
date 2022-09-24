@@ -2,7 +2,7 @@ const link = 'http://api.weatherstack.com/current?access_key=da8fdd54aa06796a4e8
 const button = document.querySelector('.button_ready')
 
 let store = {
-    city: 'Moscow',
+    city: 'Los-Angeles',
     feelslike: 0,
     cloudcover: 0,
     temperature: 0,
@@ -59,6 +59,13 @@ const fetchData = async () => {
         windDegree,
     }
     renderComponent();
+    let deg = store.windDegree;
+    const directionWindIcon = document.querySelector('.direction__wind_icon')
+    directionWindIcon.style.transform = 'rotate('+ deg + 'deg)';
+    console.log(directionWindIcon);
+    console.log(deg);
+    console.log('rotate('+ deg + 'deg)');
+    console.log(directionWindIcon.style.transform);
 };
 const getImage = (weatherDescriptions) => {
     const value = weatherDescriptions.toLowerCase();
@@ -145,14 +152,7 @@ function myClick(){
     console.log(store.windDegree);
     let a = document.querySelector('.input').value;
     store.city = a;
-    let deg = store.windDegree;
-    const directionWindIcon = document.querySelector('.direction__wind_icon')
-    directionWindIcon.style.transform = 'rotate('+ deg +'deg)';
-    console.log(directionWindIcon);
-    console.log(deg);
-    console.log('rotate('+ deg +'deg)');
-    console.log(directionWindIcon.style.transform);
-    //fetchData();
+    fetchData();
 };
 
 // const directionWindIcon = document.querySelector('.direction__wind_icon');

@@ -253,16 +253,18 @@ body {
             align-items: center;
             justify-content: center;
             position: absolute;
-            top: 40px;
-            left: 0px;
-            width: 95px;
-            height: 20px;
-            transform: rotate(90deg);
+            top: -28px;
+            left: 41.5px;
+            width: 14px;
+            height: 150px;
             &:before{
-                content: '<';
+                content: '*';
+                font-size: 5px;
+                color: transparent;
+                padding: 5px;
+                background-color: aqua;
                 top:0px;
-                left: 0px;
-                
+                left: 10px;
                 border-radius: 50%;
             }
             

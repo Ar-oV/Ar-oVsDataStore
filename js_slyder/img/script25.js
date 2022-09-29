@@ -22,7 +22,7 @@ const renderItem = () => {
     return state
         .map(({ urls: { regular }, user: { name}, id }) => {
             const inActive = currentSlide === id ? 'active' : ''
-            return `<div class="slide ${inActive}" style="background-image: url(${regular})">
+            return `<div class="slide ${inActive}" style="background-image: url(${regular}) cover no-repeat">
                         <div class="slide-text" >
                             <span>photo by</span>
                             <div class="name">${name}</div>
@@ -30,7 +30,7 @@ const renderItem = () => {
                     </div>`
         }).join("");
 };
-const handleClick = (currentTarget) => {
+const handleClick = ({ currentTarget }) => {
     console.log(currentTarget);
 };
 const setPhotos = () => {

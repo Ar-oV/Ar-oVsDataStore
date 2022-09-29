@@ -18,7 +18,33 @@ body {
 }
 
 .slider .slide {
+  position: relative;
   margin: 100px 10px;
-  width: 455px;
+  width: 200px;
+}
+
+.slider .slide span,
+.slider .slide .name {
+  color: transparent;
+}
+
+.slider .active {
+  position: relative;
+  margin: 100px 10px;
+  width: 1220px;
+}
+
+.slider .active span {
+  position: absolute;
+  bottom: 30px;
+  right: 5px;
+  color: antiquewhite;
+}
+
+.slider .active .name {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  color: antiquewhite;
 }
 /*# sourceMappingURL=style25.css.map */

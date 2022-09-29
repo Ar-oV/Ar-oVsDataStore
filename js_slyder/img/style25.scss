@@ -13,7 +13,29 @@ body {
     width: 1900px;
     margin: 0 auto;
     .slide {
+        position: relative;
         margin: 100px 10px;
-        width: 455px;
+        width: 200px;
+        span,
+        .name {
+            color: transparent;
+        }
+    }
+    .active {
+        position: relative;
+        margin: 100px 10px;
+        width: 1220px;
+        span {
+            position: absolute;
+            bottom: 30px;
+            right: 5px;
+            color: antiquewhite;
+        }
+        .name{
+            position: absolute;
+            bottom: 0;
+            right: 5px;
+            color: antiquewhite;
+        }
     }
 }

@@ -4,8 +4,9 @@ body {
   font-family: 'Courier New', Courier, monospace;
   height: 100%;
   background: url(/js_weather/img/skyBox.jpg) center;
-  font-size: 24px;
-  color: antiquewhite;
+  color: grey;
+  font-weight: 700;
+  letter-spacing: 10px;
 }
 
 .slider {
@@ -18,13 +19,22 @@ body {
 }
 
 .slider .slide {
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
   position: relative;
+  -webkit-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
   margin: 100px 10px;
   width: 200px;
 }
 
 .slider .slide span,
 .slider .slide .name {
+  -webkit-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
   color: transparent;
 }
 
@@ -32,19 +42,27 @@ body {
   position: relative;
   margin: 100px 10px;
   width: 1220px;
+  -webkit-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
 }
 
 .slider .active span {
+  font-size: 20px;
+  -webkit-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
   position: absolute;
-  bottom: 30px;
+  bottom: 35px;
   right: 5px;
-  color: antiquewhite;
+  color: grey;
 }
 
 .slider .active .name {
+  font-size: 30px;
+  -webkit-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
   position: absolute;
   bottom: 0;
   right: 5px;
-  color: antiquewhite;
+  color: grey;
 }
 /*# sourceMappingURL=style25.css.map */

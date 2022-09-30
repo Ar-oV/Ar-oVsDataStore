@@ -22,7 +22,7 @@ const renderItem = () => {
     return state
         .map(({ urls: { regular }, user: { name}, id }) => {
             const inActive = currentSlide === id ? 'active' : ''
-            return `<div class="slide ${inActive}" style="background-image: url(${regular}) cover no-repeat">
+            return `<div class="slide ${inActive}" data-id="${id}" style="background-image: url(${regular})">
                         <div class="slide-text" >
                             <span>photo by</span>
                             <div class="name">${name}</div>
@@ -31,7 +31,12 @@ const renderItem = () => {
         }).join("");
 };
 const handleClick = ({ currentTarget }) => {
-    console.log(currentTarget);
+    const slides = document.querySelectorAll(".slide");
+    const { id } = currentTarget.dataset;
+    if(id === currentSlide) return;
+    slides.forEach((slide) => slide.classList.remove("active"));
+    currentTarget.classList.add("active");
+    currentSlide = id;
 };
 const setPhotos = () => {
     slider.innerHTML = renderItem();

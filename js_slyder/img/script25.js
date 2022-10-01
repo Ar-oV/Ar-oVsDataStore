@@ -1,12 +1,13 @@
 const CLIENT_ID = 'm_GwHyAP4-AIfdJnXK0SnwLiwdaZzYjSnq8ukDj4ra4';
 const slider = document.getElementById('slider');
+const button = document.querySelector('.button_ready')
 let state = [];
 let currentSlide;
 const fetchPhotos = async() => {
     try {
-        const url = `https://api.unsplash.com/photos/random?client_id=${CLIENT_ID}&count=4`;
-    const response = await fetch(url);
-    const data = await response.json();
+        const url = `https://api.unsplash.com/photos/random?client_id=${CLIENT_ID}&count=10&query=${query}`;
+        const response = await fetch(url);
+        const data = await response.json();
     if(response.ok && data.length) {
         state = data;
         currentSlide = data[0].id
@@ -16,7 +17,7 @@ const fetchPhotos = async() => {
         console.log(err);
     }
 
-    console.log(data);
+    
 };
 const renderItem = () => {
     return state
@@ -46,4 +47,10 @@ const setPhotos = () => {
     });
     console.log(slides);
 };
-fetchPhotos();
+button.addEventListener('click', myClick);
+function myClick(){
+    let a = document.querySelector('.input').value;
+    query = a;
+    fetchPhotos();
+
+};

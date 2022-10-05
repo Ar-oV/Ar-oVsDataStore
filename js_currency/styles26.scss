@@ -49,7 +49,7 @@ body {
     margin-top: 10px;
     text-align: center;
     font-size: 36px;
-    color: red;
+    color: rgb(75, 75, 75);;
     font-weight: 500;
 }
 .exchange__currency {
@@ -78,4 +78,10 @@ input {
     height: 50px;
     font-size: 30px;
     margin: 0px 10px;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
 }

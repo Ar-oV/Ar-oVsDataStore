@@ -2,6 +2,10 @@ const rates = {};
 const usd = document.querySelector('[data-value="USD"]');
 const eur = document.querySelector('[data-value="EUR"]');
 const gbp = document.querySelector('[data-value="GBP"]');
+
+const input = document.querySelector('#input');
+const result = document.querySelector('#result');
+const select = document.querySelector('#select');
 getCurrencies();
 async function getCurrencies () {
     const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
@@ -23,4 +27,10 @@ async function getCurrencies () {
     if(rates.GBP.Value > rates.GBP.Previos) {
         gbp.classList.add('green');
     } else {gbp.classList.add('red')};
+}
+input.oninput = convertValue;
+select.oninput = convertValue;
+
+function convertValue() {
+    result.value = (parseFloat(input.value) / rates[select.value].Value).toFixed(2);
 }

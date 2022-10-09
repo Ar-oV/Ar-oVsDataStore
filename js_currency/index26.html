@@ -27,13 +27,19 @@
         <div class="exchange__currency">
           <div class="container__input">
             <p>Отдаю:</p>
-            <div class="currency__type"></div>
-            <input type="text" name="" id="">
+            <div class="currency__type">
+              <p>RUB - Рубли</p>
+            </div>
+            <input type="text" name="" id="input">
           </div>
           <div class="container__input">
             <p>Получаю:</p>
-            <div class="currency__type"></div>
-            <input type="text" name="" id="">
+            <select id="select" class="currency__type">
+              <option value="USD">USD - Доллар США</option>
+              <option value="EUR">EUR - Евро</option>
+              <option value="GBP">GBP - Фунт Стерлингов</option>
+            </select>
+            <input type="text" name="" id="result">
           </div>
         </div>
       </div>

@@ -80,16 +80,27 @@ body {
   margin: 20px;
 }
 
+.container__input {
+  text-align: left;
+}
+
 p {
   margin: 0px 10px;
 }
 
 .currency__type {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #4b4b4b;
   border: solid 2px grey;
   width: 280px;
   height: 50px;
-  font-size: 30px;
   margin: 0px 10px 20px;
+}
+
+.currency__type p {
+  margin-top: 10px;
 }
 
 .currency__type:hover {

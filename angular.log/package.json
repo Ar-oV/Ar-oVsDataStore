@@ -1,0 +1,32 @@
+{
+    "name": "helloapp",
+    "version": "0.0.0",
+    "description": "Angular 9",
+    "author": "WebForMyself",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build",
+      "watch": "ng build --configuration development",
+      "test": "ng test"
+    },
+    "dependencies": {
+      "@angular/common": "~14.1.0",
+      "@angular/compiler": "~14.1.0",
+      "@angular/core": "~14.1.0",
+      "@angular/forms": "~14.1.0",
+      "@angular/platform-browser": "~14.1.0",
+      "@angular/platform-browser-dynamic": "~14.1.0",
+      "@angular/router": "~14.1.0",
+      "rxjs": "~7.5.0",
+      "zone.js": "~0.11.4"
+    },
+    "devDependencies": {
+      "@angular-devkit/build-angular": "~14.1.2",
+      "@angular/cli": "~14.1.2",
+      "@angular/compiler-cli": "~14.1.1",
+      "@types/node": "^12.11.1",
+      "typescript": "~3.7.5"
+    }
+  }
+  

@@ -7,7 +7,6 @@
 *,
 *::before,
 *:after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -94,8 +93,7 @@ h2 {
   letter-spacing: 6px;
   background-color: rgba(21, 87, 242, 0.5);
   border-radius: 10px;
-  -webkit-box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
-          box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
+  box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
 }
 
 .image {
@@ -103,8 +101,7 @@ h2 {
   text-align: center;
   padding: 0.4%;
   border-radius: 5%;
-  -webkit-box-shadow: 0 0 3em rgba(37, 87, 237, 0.9);
-          box-shadow: 0 0 3em rgba(37, 87, 237, 0.9);
+  box-shadow: 0 0 3em rgba(37, 87, 237, 0.9);
 }
 
 .text {
@@ -117,7 +114,6 @@ h2 {
   letter-spacing: 4px;
   text-shadow: 0 0 4px #3333e4;
 }
-
 .text span {
   color: rgba(0, 20, 245, 0.6);
 }
@@ -134,22 +130,18 @@ button {
   text-shadow: 0 0 4px #3333e4;
   text-align: center;
 }
-
 form form,
 button form {
   width: 100%;
 }
-
 form button,
 button button {
   background-color: rgba(21, 87, 242, 0.5);
   border-radius: 10px;
-  -webkit-box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
-          box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
+  box-shadow: 0 0 2em rgba(37, 87, 237, 0.9);
   height: 70px;
   width: 300px;
 }
-
 form button:hover,
 button button:hover {
   text-shadow: 0px 0px 5px black;
@@ -157,7 +149,7 @@ button button:hover {
 
 div.gallery {
   margin: 20px auto 30px 20px;
-  border: 1px solid #0c11ae;
+  border: 1px solid rgb(12, 17, 174);
   float: left;
   width: 20rem;
   border-radius: 5%;
@@ -166,15 +158,13 @@ div.gallery {
 }
 
 div.gallery:hover {
-  border: 1px solid #095914;
-  -webkit-box-shadow: 0 0 15px black;
-          box-shadow: 0 0 15px black;
+  border: 1px solid rgb(9, 89, 20);
+  box-shadow: 0 0 15px black;
 }
 
 div.gallery:active {
-  border: 3px solid #077116;
-  -webkit-box-shadow: 0 0 15px red;
-          box-shadow: 0 0 15px red;
+  border: 3px solid rgb(7, 113, 22);
+  box-shadow: 0 0 15px red;
 }
 
 div.gallery img {
@@ -191,8 +181,7 @@ div.desc {
   margin: 60px;
   height: 300px;
   border-radius: 15px;
-  -webkit-box-shadow: 0 0 25px #000;
-          box-shadow: 0 0 25px #000;
+  box-shadow: 0 0 25px #000;
   background: url(../rocks.jpg) 50%/cover no-repeat;
   margin: 0px 0px 100px 0px;
 }
@@ -205,8 +194,7 @@ div.desc {
   line-height: 70px;
   border-bottom: solid 3px rgba(0, 64, 255, 0.2);
   background-color: rgba(0, 8, 255, 0.6);
-  -webkit-box-shadow: 0 0 50px rgba(0, 64, 255, 0.9);
-          box-shadow: 0 0 50px rgba(0, 64, 255, 0.9);
+  box-shadow: 0 0 50px rgba(0, 64, 255, 0.9);
   font-size: 24px;
   font-weight: 500;
   position: fixed;
@@ -214,7 +202,6 @@ div.desc {
   left: 0;
   width: 100%;
 }
-
 .menu .textmenu {
   text-align: center;
   padding: 0px 0px 0px 0px;
@@ -222,8 +209,6 @@ div.desc {
   letter-spacing: 4px;
   text-shadow: 0 0 4px #3333e4;
 }
-
 .menu .textmenu:hover {
   text-shadow: 0px 0px 5px black;
-}
-/*# sourceMappingURL=my.css.map */
+}/*# sourceMappingURL=my.css.map */

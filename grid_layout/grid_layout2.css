@@ -2,7 +2,7 @@
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   background-color: #333;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -27,16 +27,11 @@ h1 {
 }
 
 .grid__body {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: [start] 150px [row2] 150px [row-end];
-      grid-template-rows: [start] 150px [row2] 150px [row-end];
-  -ms-grid-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
-      grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+  grid-template-rows: [start] 150px [row2] 150px [row-end];
+  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
   justify-items: start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
+  align-items: end;
   gap: 20px;
 }
 
@@ -47,27 +42,18 @@ h1 {
 }
 
 .grid__item_1 {
-  -ms-grid-row: 1;
   grid-row: 1/1;
-  -ms-grid-column: 1;
   grid-column: 1/1;
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
-  -ms-grid-column-align: stretch;
-      justify-self: stretch;
+  align-self: stretch;
+  justify-self: stretch;
   background-color: brown;
 }
 
 .grid__item_2 {
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
-  -ms-grid-column-align: stretch;
-      justify-self: stretch;
+  align-self: stretch;
+  justify-self: stretch;
 }
 
 .grid__item_4 {
   margin: auto;
-}
-/*# sourceMappingURL=grid_layout2.css.map */
+}/*# sourceMappingURL=grid_layout2.css.map */

@@ -1,7 +1,7 @@
 @import url(/scss_lern/nullstyle.css);
 html,
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   color: grey;
   font-weight: 700;
   font-size: 23px;
@@ -14,77 +14,65 @@ body {
   line-height: 60px;
   text-align: center;
 }
-
 .location .placeholder {
   position: absolute;
   left: 43%;
   top: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   pointer-events: none;
-  -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-
-.location input:focus + .placeholder, .location input:not(:placeholder-shown) + .placeholder {
+.location input:not(:-moz-placeholder-shown) + .placeholder {
   top: 30px;
-  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   font-size: 17px;
 }
-
+.location input:focus + .placeholder, .location input:not(:placeholder-shown) + .placeholder {
+  top: 30px;
+  transition: all 0.3s ease 0s;
+  font-size: 17px;
+}
 .location input {
   font-weight: 500;
   letter-spacing: 6px;
-  color: #8d8d8d;
+  color: rgb(141, 141, 141);
   font-size: 28px;
   border: none;
   border-bottom: solid 2px rgba(98, 98, 98, 0.1);
   background-color: transparent;
-  -webkit-transition: all 0.1s ease 0s;
   transition: all 0.1s ease 0s;
 }
-
 .location input:focus {
-  -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   border-bottom: solid 2px rgba(92, 92, 92, 0.4);
 }
-
 .location .button_ready {
   position: absolute;
   top: 50px;
   left: 49%;
   background-color: transparent;
   display: inline-block;
-  color: #8d8d8d;
+  color: rgb(141, 141, 141);
   font-size: 20px;
   letter-spacing: 3px;
 }
-
 .location .button_ready:active {
-  -webkit-transition: all 0.04s ease 0s;
   transition: all 0.04s ease 0s;
-  -webkit-transform: scale(0.85);
-          transform: scale(0.85);
+  transform: scale(0.85);
 }
 
 .slider {
-  display: -ms-grid;
   display: grid;
   min-height: 1300px;
   width: 1900px;
   margin: 50px auto;
-  -webkit-transition: all 0.1s ease 0s;
   transition: all 0.1s ease 0s;
-  -ms-grid-rows: [start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr [row-end];
-      grid-template-rows: [start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr [row-end];
-  -ms-grid-columns: [start] 1fr [col2] 1fr [col3] 1fr [col4] 1fr [col5] 1fr [col-end];
-      grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col4] 1fr [col5] 1fr [col-end];
+  grid-template-rows: [start] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr [row-end];
+  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col4] 1fr [col5] 1fr [col-end];
 }
-
 .slider .slide {
   border-radius: 5px;
   margin: 10px;
@@ -95,26 +83,17 @@ body {
   cursor: pointer;
   position: relative;
 }
-
 .slider .slide span,
 .slider .slide .name {
-  -webkit-transition: all 0.1s ease 0s;
   transition: all 0.1s ease 0s;
   color: transparent;
 }
-
 .slider .active {
-  -webkit-transition: all 0.1s ease 0s;
   transition: all 0.1s ease 0s;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
   grid-row: 1/5;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
   grid-column: 1/5;
   position: relative;
 }
-
 .slider .active span {
   font-size: 20px;
   position: absolute;
@@ -122,12 +101,10 @@ body {
   right: 5px;
   color: grey;
 }
-
 .slider .active .name {
   font-size: 30px;
   position: absolute;
   bottom: 0;
   right: 5px;
   color: grey;
-}
-/*# sourceMappingURL=style25.css.map */
+}/*# sourceMappingURL=style25.css.map */

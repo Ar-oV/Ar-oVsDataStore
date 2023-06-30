@@ -10,9 +10,7 @@ body {
 
 .text {
   padding: 20px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
   display: box;
 }
 
@@ -20,13 +18,13 @@ body {
   padding: 15px;
   display: block;
   height: 80px;
-  background-color: #3f8dd2;
+  background-color: rgb(63, 141, 210);
   margin: 300px auto;
   line-height: 30px;
   text-align: center;
   border-radius: 5px;
   font-size: 16px;
-  color: #313131;
+  color: rgb(49, 49, 49);
 }
 
 button {
@@ -34,20 +32,15 @@ button {
   font-weight: 900px;
   padding: 10px 20px;
   border-radius: 5px;
-  color: black;
+  color: rgb(0, 0, 0);
   background-color: aqua;
-  -webkit-box-shadow: 0 5px 0px black;
-          box-shadow: 0 5px 0px black;
-  -webkit-transition: all 1s ease 0s;
+  box-shadow: 0 5px 0px black;
   transition: all 1s ease 0s;
 }
-
 button:hover {
   top: 2px;
-  -webkit-transition: all 1s ease 0s;
   transition: all 1s ease 0s;
-  -webkit-box-shadow: 0 3px 0px black;
-          box-shadow: 0 3px 0px black;
+  box-shadow: 0 3px 0px black;
   background-color: aquamarine;
 }
 
@@ -59,29 +52,15 @@ button:hover {
 .content__circle {
   width: 100px;
   height: 100px;
-  background-color: #070e13;
+  background-color: rgb(7, 14, 19);
   border-radius: 50%;
   position: relative;
   left: 0;
-  -webkit-animation: white-circle 2s linear infinite alternate 0.5s forwards, red-circle 1s linear infinite alternate 0.5s forwards;
-          animation: white-circle 2s linear infinite alternate 0.5s forwards, red-circle 1s linear infinite alternate 0.5s forwards;
+  animation: white-circle 2s linear infinite alternate 0.5s forwards, red-circle 1s linear infinite alternate 0.5s forwards;
 }
 
 .content:hover .content__circle {
-  -webkit-animation-name: none;
-          animation-name: none;
-}
-
-@-webkit-keyframes white-circle {
-  0% {
-    left: 0;
-  }
-  50% {
-    border-radius: 5px;
-  }
-  100% {
-    left: 400px;
-  }
+  animation-name: none;
 }
 
 @keyframes white-circle {
@@ -95,19 +74,6 @@ button:hover {
     left: 400px;
   }
 }
-
-@-webkit-keyframes red-circle {
-  0% {
-    background-color: black;
-  }
-  50% {
-    background-color: red;
-  }
-  100% {
-    background-color: black;
-  }
-}
-
 @keyframes red-circle {
   0% {
     background-color: black;
@@ -118,5 +84,4 @@ button:hover {
   100% {
     background-color: black;
   }
-}
-/*# sourceMappingURL=animations.css.map */
+}/*# sourceMappingURL=animations.css.map */
